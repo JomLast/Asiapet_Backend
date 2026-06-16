@@ -37,7 +37,7 @@ function requireAdmin(req: Request, res: Response, next: NextFunction): void {
 
 // ── POST /api/admin/import ──────────────────────────────────────────────────
 
-router.post('/import', (req: Request, res: Response, next: NextFunction) => {
+router.post('/import', requireAdmin, (req: Request, res: Response, next: NextFunction) => {
   try {
     const db = getDb();
     const clinicId = req.clinicId!;
