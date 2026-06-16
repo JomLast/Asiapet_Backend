@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AsiaPet Admin</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --primary: #7A5BA6;
+  --primary-light: #9B7DC8;
+  --primary-dark: #5A3D86;
+  --bg: #0f0f1a;
+  --bg-card: rgba(30, 30, 50, 0.7);
+  --bg-card-solid: #1e1e32;
+  --bg-modal: rgba(20, 20, 38, 0.95);
+  --border: rgba(122, 91, 166, 0.25);
+  --border-light: rgba(122, 91, 166, 0.4);
+  --text: #e8e8f0;
+  --text-dim: #9090a8;
+  --text-muted: #606078;
+  --success: #4caf50;
+  --danger: #ef5350;
+  --warning: #ffa726;
+  --info: #42a5f5;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+  --glass: blur(16px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(122,91,166,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(90,61,134,0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--primary-dark); border-radius: 3px; }
+
+/* ── Login ── */
+#login-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+.login-box {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow);
+}
+.login-box h1 {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+}
+.login-box h1 i { color: var(--primary-light); margin-right: 8px; }
+.login-box .subtitle {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-bottom: 32px;
+}
+
+/* ── Forms ── */
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.form-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(122,91,166,0.2);
+}
+.form-input::placeholder { color: var(--text-muted); }
+select.form-input { cursor: pointer; }
+select.form-input option { background: var(--bg-card-solid); color: var(--text); }
+textarea.form-input { resize: vertical; min-height: 60px; font-family: inherit; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #fff;
+  white-space: nowrap;
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--primary); }
+.btn-primary:hover:not(:disabled) { background: var(--primary-light); }
+.btn-success { background: var(--success); }
+.btn-success:hover:not(:disabled) { background: #66bb6a; }
+.btn-danger { background: var(--danger); }
+.btn-danger:hover:not(:disabled) { background: #e57373; }
+.btn-warning { background: var(--warning); color: #1a1a2e; }
+.btn-warning:hover:not(:disabled) { background: #ffb74d; }
+.btn-ghost {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.btn-ghost:hover:not(:disabled) { background: rgba(255,255,255,0.1); }
+.btn-sm { padding: 5px 10px; font-size: 12px; }
+.btn-lg { padding: 12px 28px; font-size: 15px; }
+.btn-block { width: 100%; justify-content: center; }
+
+/* ── App Shell ── */
+#app { display: none; position: relative; z-index: 1; }
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--bg-card);
+  backdrop-filter: var(--glass);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.topbar-brand i { color: var(--primary-light); }
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.topbar-user {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* ── Tabs ── */
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  padding: 12px 24px 0;
+  border-bottom: 1px solid var(--border);
+  background: rgba(15,15,26,0.5);
+}
+.tab-btn {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active {
+  color: var(--primary-light);
+  border-bottom-color: var(--primary);
+}
+.tab-content { display: none; padding: 24px; }
+.tab-content.active { display: block; }
+
+/* ── Cards ── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: border-color 0.2s;
+}
+.stat-card:hover { border-color: var(--border-light); }
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.stat-icon.purple { background: rgba(122,91,166,0.2); color: var(--primary-light); }
+.stat-icon.green { background: rgba(76,175,80,0.2); color: var(--success); }
+.stat-icon.blue { background: rgba(66,165,245,0.2); color: var(--info); }
+.stat-icon.orange { background: rgba(255,167,38,0.2); color: var(--warning); }
+.stat-info h3 { font-size: 28px; font-weight: 700; line-height: 1.1; }
+.stat-info p { font-size: 13px; color: var(--text-dim); margin-top: 2px; }
+.stat-info .sub { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+/* ── Tables ── */
+.table-wrap {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.table-toolbar h2 { font-size: 16px; font-weight: 600; }
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+}
+.search-box i { color: var(--text-muted); font-size: 13px; }
+.search-box input {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 13px;
+  outline: none;
+  width: 180px;
+}
+.search-box input::placeholder { color: var(--text-muted); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  text-align: left;
+  padding: 10px 18px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+th {
+  color: var(--text-dim);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(255,255,255,0.02);
+}
+tr:hover td { background: rgba(122,91,166,0.05); }
+
+/* ── Status badges ── */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.badge-active { background: rgba(76,175,80,0.15); color: var(--success); }
+.badge-expired { background: rgba(239,83,80,0.15); color: var(--danger); }
+.badge-warning { background: rgba(255,167,38,0.15); color: var(--warning); }
+
+/* ── Modal ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--bg-modal);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-header h2 { font-size: 17px; font-weight: 600; }
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+}
+.modal-close:hover { color: var(--text); }
+.modal-body { padding: 24px; }
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Content layout ── */
+.content-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+  min-height: 500px;
+}
+.content-sidebar {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: background 0.15s;
+  font-size: 13px;
+}
+.sidebar-item:hover { background: rgba(122,91,166,0.08); }
+.sidebar-item.active {
+  background: rgba(122,91,166,0.15);
+  border-left: 3px solid var(--primary);
+}
+.sidebar-item .count {
+  background: rgba(255,255,255,0.08);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+.content-main {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* ── Dose rows ── */
+.dose-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 40px;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+.dose-row .form-input { padding: 7px 10px; font-size: 12px; }
+.dose-remove {
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 14px;
+}
+.dose-remove:hover { color: #e57373; }
+
+/* ── Expand row ── */
+.expand-row { display: none; }
+.expand-row.open { display: table-row; }
+.expand-cell {
+  padding: 16px 24px !important;
+  background: rgba(122,91,166,0.04);
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+.detail-item label {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.detail-item span { font-size: 13px; }
+
+/* ── Toast ── */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.toast {
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: #fff;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideIn 0.3s ease;
+  max-width: 380px;
+}
+.toast.success { background: rgba(76,175,80,0.9); }
+.toast.error { background: rgba(239,83,80,0.9); }
+.toast.info { background: rgba(66,165,245,0.9); }
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideOut {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+/* ── Spinner ── */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+.spinner-lg { width: 32px; height: 32px; border-width: 3px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  gap: 12px;
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .content-layout { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .topbar { padding: 10px 16px; }
+  .tab-content { padding: 16px; }
+  .table-toolbar { flex-direction: column; align-items: flex-start; }
+  .dose-row { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Toast container -->
+<div class="toast-container" id="toasts"></div>
+
+<!-- ═══ LOGIN SCREEN ═══ -->
+<div id="login-screen">
+  <div class="login-box">
+    <h1><i class="fas fa-paw"></i> AsiaPet</h1>
+    <p class="subtitle">Admin Dashboard</p>
+    <form id="login-form" onsubmit="doLogin(event)">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input class="form-input" id="login-email" type="email" placeholder="admin@asiapet.com" required>
+      </div>
+      <div class="form-group">
+        <label for="login-pass">Password</label>
+        <input class="form-input" id="login-pass" type="password" placeholder="Enter password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="login-btn">
+        <i class="fas fa-sign-in-alt"></i> Sign In
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ═══ APP SHELL ═══ -->
+<div id="app">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-brand">
+      <i class="fas fa-paw"></i> AsiaPet Admin
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-user" id="user-email"></span>
+      <button class="btn btn-ghost btn-sm" onclick="doLogout()">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="dashboard" onclick="switchTab('dashboard')">
+      <i class="fas fa-chart-bar"></i> Dashboard
+    </button>
+    <button class="tab-btn" data-tab="clinics" onclick="switchTab('clinics')">
+      <i class="fas fa-hospital"></i> Clinics
+    </button>
+    <button class="tab-btn" data-tab="content" onclick="switchTab('content')">
+      <i class="fas fa-database"></i> Content
+    </button>
+  </div>
+
+  <!-- ── Dashboard Tab ── -->
+  <div class="tab-content active" id="tab-dashboard">
+    <div class="stat-grid" id="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon purple"><i class="fas fa-hospital"></i></div>
+        <div class="stat-info">
+          <h3 id="st-clinics">--</h3>
+          <p>Total Clinics</p>
+          <div class="sub" id="st-clinics-sub"></div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green"><i class="fas fa-dog"></i></div>
+        <div class="stat-info">
+          <h3 id="st-patients">--</h3>
+          <p>Total Patients</p>
+          <div class="sub">across all clinics</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon blue"><i class="fas fa-pills"></i></div>
+        <div class="stat-info">
+          <h3 id="st-drugs">--</h3>
+          <p>Drugs</p>
+          <div class="sub" id="st-drugs-sub"></div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon orange"><i class="fas fa-virus"></i></div>
+        <div class="stat-info">
+          <h3 id="st-diseases">--</h3>
+          <p>Diseases</p>
+          <div class="sub" id="st-diseases-sub"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Clinics Tab ── -->
+  <div class="tab-content" id="tab-clinics">
+    <div class="table-wrap">
+      <div class="table-toolbar">
+        <h2><i class="fas fa-hospital" style="color:var(--primary-light);margin-right:8px"></i>Clinic Management</h2>
+        <div style="display:flex;gap:10px;align-items:center">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input placeholder="Search clinics..." id="clinic-search" oninput="renderClinics()">
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="openClinicModal()">
+            <i class="fas fa-plus"></i> Add Clinic
+          </button>
+        </div>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Clinic Name</th>
+              <th>Status</th>
+              <th>Expiry Date</th>
+              <th>Patients</th>
+              <th style="text-align:right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="clinics-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Content Tab ── -->
+  <div class="tab-content" id="tab-content">
+    <div class="content-layout">
+      <div class="content-sidebar" id="content-sidebar"></div>
+      <div class="content-main" id="content-main">
+        <div class="loading-center" style="color:var(--text-muted)">
+          <i class="fas fa-arrow-left"></i> Select a content type
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CLINIC MODAL ═══ -->
+<div class="modal-overlay" id="clinic-modal">
+  <div class="modal" style="max-width:440px">
+    <div class="modal-header">
+      <h2 id="clinic-modal-title">Add Clinic</h2>
+      <button class="modal-close" onclick="closeModal('clinic-modal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="clinic-edit-id">
+      <div class="form-group">
+        <label>Clinic Name</label>
+        <input class="form-input" id="clinic-name" placeholder="e.g. Bangkok Pet Clinic">
+      </div>
+      <div class="form-group">
+        <label>Expiry Date</label>
+        <input class="form-input" id="clinic-expiry" type="date">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('clinic-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveClinic()">
+        <i class="fas fa-save"></i> Save
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DRUG EDITOR MODAL ═══ -->
+<div class="modal-overlay" id="drug-modal">
+  <div class="modal" style="max-width:720px">
+    <div class="modal-header">
+      <h2 id="drug-modal-title">Add Drug</h2>
+      <button class="modal-close" onclick="closeModal('drug-modal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="drug-edit-index">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-input" id="drug-name" placeholder="Drug name">
+        </div>
+        <div class="form-group">
+          <label>Brand</label>
+          <input class="form-input" id="drug-brand" placeholder="Brand">
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select class="form-input" id="drug-cat"></select>
+        </div>
+        <div class="form-group">
+          <label>Class</label>
+          <input class="form-input" id="drug-cls" placeholder="e.g. Antibiotic">
+        </div>
+        <div class="form-group" style="grid-column:1/-1">
+          <label>Use / Indication</label>
+          <input class="form-input" id="drug-use" placeholder="Primary use">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="drug-verified" style="margin-right:6px">
+          Verified
+        </label>
+      </div>
+
+      <div style="margin-top:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <label style="font-size:13px;color:var(--text-dim);font-weight:500">Doses</label>
+          <button class="btn btn-ghost btn-sm" onclick="addDoseRow()">
+            <i class="fas fa-plus"></i> Add Dose
+          </button>
+        </div>
+        <div id="dose-rows"></div>
+      </div>
+
+      <div class="form-group" style="margin-top:16px">
+        <label>Warnings</label>
+        <textarea class="form-input" id="drug-warnings" rows="2" placeholder="Any warnings..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Contraindications (comma-separated species)</label>
+        <input class="form-input" id="drug-contra" placeholder="e.g. cat, rabbit">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('drug-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveDrug()">
+        <i class="fas fa-save"></i> Save Drug
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONTENT ITEM MODAL (generic edit) ═══ -->
+<div class="modal-overlay" id="content-modal">
+  <div class="modal" style="max-width:560px">
+    <div class="modal-header">
+      <h2 id="content-modal-title">Edit Item</h2>
+      <button class="modal-close" onclick="closeModal('content-modal')">&times;</button>
+    </div>
+    <div class="modal-body" id="content-modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('content-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveContentItem()">
+        <i class="fas fa-save"></i> Save
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   STATE
+   ══════════════════════════════════════════════════════════════ */
+let token = localStorage.getItem('admin_token');
+let clinics = [];
+let contentTypes = {};
+let activeContentType = null;
+let activeContentData = [];
+let drugCategories = [];
+
+const API = '';
+
+/* ══════════════════════════════════════════════════════════════
+   HELPERS
+   ══════════════════════════════════════════════════════════════ */
+function $(id) { return document.getElementById(id); }
+
+async function api(method, path, body) {
+  const opts = {
+    method,
+    headers: { 'Content-Type': 'application/json' },
+  };
+  if (token) opts.headers['Authorization'] = 'Bearer ' + token;
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(API + path, opts);
+  if (res.status === 401) { doLogout(); throw new Error('Session expired'); }
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || data.message || `HTTP ${res.status}`);
+  return data;
+}
+
+function toast(msg, type = 'info') {
+  const el = document.createElement('div');
+  el.className = 'toast ' + type;
+  const icons = { success: 'check-circle', error: 'exclamation-circle', info: 'info-circle' };
+  el.innerHTML = `<i class="fas fa-${icons[type] || 'info-circle'}"></i> ${esc(msg)}`;
+  $('toasts').appendChild(el);
+  setTimeout(() => {
+    el.style.animation = 'slideOut 0.3s ease forwards';
+    setTimeout(() => el.remove(), 300);
+  }, 4000);
+}
+
+function esc(s) {
+  if (s == null) return '';
+  const d = document.createElement('div');
+  d.textContent = String(s);
+  return d.innerHTML;
+}
+
+function fmtDate(d) {
+  if (!d) return '--';
+  return new Date(d).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+function closeModal(id) { $(id).classList.remove('open'); }
+function openModal(id) { $(id).classList.add('open'); }
+
+/* ══════════════════════════════════════════════════════════════
+   AUTH
+   ══════════════════════════════════════════════════════════════ */
+async function doLogin(e) {
+  e.preventDefault();
+  const btn = $('login-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Signing in...';
+  try {
+    const res = await api('POST', '/api/auth/login', {
+      email: $('login-email').value.trim(),
+      password: $('login-pass').value,
+    });
+    token = res.token;
+    localStorage.setItem('admin_token', token);
+    showApp();
+    toast('Logged in successfully', 'success');
+  } catch (err) {
+    toast(err.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+  }
+}
+
+function doLogout() {
+  token = null;
+  localStorage.removeItem('admin_token');
+  $('app').style.display = 'none';
+  $('login-screen').style.display = 'flex';
+}
+
+/* ══════════════════════════════════════════════════════════════
+   APP INIT
+   ══════════════════════════════════════════════════════════════ */
+function showApp() {
+  $('login-screen').style.display = 'none';
+  $('app').style.display = 'block';
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    $('user-email').textContent = payload.email || '';
+  } catch { $('user-email').textContent = ''; }
+  loadDashboard();
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TABS
+   ══════════════════════════════════════════════════════════════ */
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.toggle('active', t.id === 'tab-' + name));
+  if (name === 'dashboard') loadDashboard();
+  if (name === 'clinics') loadClinics();
+  if (name === 'content') loadContentSidebar();
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DASHBOARD
+   ══════════════════════════════════════════════════════════════ */
+async function loadDashboard() {
+  try {
+    const s = await api('GET', '/api/admin/stats');
+    $('st-clinics').textContent = s.totalClinics ?? '--';
+    $('st-clinics-sub').textContent = `${s.activeClinics ?? 0} active / ${s.expiredClinics ?? 0} expired`;
+    $('st-patients').textContent = (s.totalPatients ?? '--').toLocaleString();
+    $('st-drugs').textContent = s.drugCount ?? '--';
+    $('st-drugs-sub').textContent = `Content v${s.contentVersion ?? '?'}`;
+    $('st-diseases').textContent = s.diseaseCount ?? '--';
+    $('st-diseases-sub').textContent = `Content v${s.contentVersion ?? '?'}`;
+  } catch (err) {
+    toast('Failed to load stats: ' + err.message, 'error');
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CLINICS
+   ══════════════════════════════════════════════════════════════ */
+async function loadClinics() {
+  $('clinics-tbody').innerHTML = '<tr><td colspan="5"><div class="loading-center"><span class="spinner spinner-lg"></span> Loading clinics...</div></td></tr>';
+  try {
+    const res = await api('GET', '/api/admin/clinics');
+    clinics = Array.isArray(res) ? res : res.clinics || [];
+    renderClinics();
+  } catch (err) {
+    $('clinics-tbody').innerHTML = `<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--danger)">${esc(err.message)}</td></tr>`;
+  }
+}
+
+function renderClinics() {
+  const q = ($('clinic-search').value || '').toLowerCase();
+  const filtered = clinics.filter(c => !q || (c.name || '').toLowerCase().includes(q));
+  if (!filtered.length) {
+    $('clinics-tbody').innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text-muted)">No clinics found</td></tr>';
+    return;
+  }
+  $('clinics-tbody').innerHTML = filtered.map(c => {
+    const now = new Date();
+    const exp = c.expiresAt ? new Date(c.expiresAt) : null;
+    const isActive = c.isActive !== undefined ? c.isActive : (exp ? exp > now : true);
+    const statusBadge = isActive
+      ? '<span class="badge badge-active">Active</span>'
+      : '<span class="badge badge-expired">Expired</span>';
+    return `<tr>
+      <td><strong>${esc(c.name)}</strong></td>
+      <td>${statusBadge}</td>
+      <td>${fmtDate(c.expiresAt)}</td>
+      <td>${c.patientCount ?? c.patients ?? '--'}</td>
+      <td style="text-align:right">
+        <button class="btn btn-sm ${isActive ? 'btn-warning' : 'btn-success'}" onclick="toggleClinic('${c._id || c.id}', ${!isActive})" title="${isActive ? 'Deactivate' : 'Activate'}">
+          <i class="fas fa-${isActive ? 'pause' : 'play'}"></i> ${isActive ? 'Deactivate' : 'Activate'}
+        </button>
+        <button class="btn btn-ghost btn-sm" onclick="extendClinic('${c._id || c.id}')" title="Extend 30 days">
+          <i class="fas fa-calendar-plus"></i> +30d
+        </button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function openClinicModal() {
+  $('clinic-modal-title').textContent = 'Add Clinic';
+  $('clinic-edit-id').value = '';
+  $('clinic-name').value = '';
+  $('clinic-expiry').value = '';
+  openModal('clinic-modal');
+}
+
+async function saveClinic() {
+  const name = $('clinic-name').value.trim();
+  const expiresAt = $('clinic-expiry').value;
+  if (!name) { toast('Clinic name is required', 'error'); return; }
+  const editId = $('clinic-edit-id').value;
+  try {
+    if (editId) {
+      await api('PUT', `/api/admin/clinics/${editId}`, { name, expiresAt });
+      toast('Clinic updated', 'success');
+    } else {
+      await api('POST', '/api/admin/clinics', { name, expiresAt });
+      toast('Clinic created', 'success');
+    }
+    closeModal('clinic-modal');
+    loadClinics();
+  } catch (err) {
+    toast(err.message, 'error');
+  }
+}
+
+async function toggleClinic(id, activate) {
+  try {
+    await api('PUT', `/api/admin/clinics/${id}`, { isActive: activate });
+    toast(activate ? 'Clinic activated' : 'Clinic deactivated', 'success');
+    loadClinics();
+  } catch (err) { toast(err.message, 'error'); }
+}
+
+async function extendClinic(id) {
+  try {
+    const clinic = clinics.find(c => (c._id || c.id) === id);
+    const base = clinic && clinic.expiresAt ? new Date(clinic.expiresAt) : new Date();
+    if (base < new Date()) base.setTime(Date.now());
+    base.setDate(base.getDate() + 30);
+    await api('PUT', `/api/admin/clinics/${id}`, { expiresAt: base.toISOString() });
+    toast('Extended by 30 days', 'success');
+    loadClinics();
+  } catch (err) { toast(err.message, 'error'); }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CONTENT SIDEBAR
+   ══════════════════════════════════════════════════════════════ */
+const CONTENT_TYPE_META = {
+  drugs:             { icon: 'pills',      label: 'Drugs' },
+  diseases:          { icon: 'virus',      label: 'Diseases' },
+  'clinical-problems': { icon: 'stethoscope', label: 'Clinical Problems' },
+  vaccines:          { icon: 'syringe',    label: 'Vaccines' },
+  labTests:          { icon: 'flask',      label: 'Lab Tests' },
+  procedures:        { icon: 'procedures', label: 'Procedures' },
+  supplies:          { icon: 'box',        label: 'Supplies' },
+};
+
+async function loadContentSidebar() {
+  try {
+    const res = await api('GET', '/api/admin/stats');
+    contentTypes = {};
+    // Build from stats or fallback to known types
+    const types = res.contentTypes || {};
+    const knownKeys = Object.keys(CONTENT_TYPE_META);
+    for (const k of knownKeys) {
+      contentTypes[k] = { count: types[k] ?? (k === 'drugs' ? res.drugCount : k === 'diseases' ? res.diseaseCount : 0) };
+    }
+    // Add any extra types from API
+    for (const k of Object.keys(types)) {
+      if (!contentTypes[k]) contentTypes[k] = { count: types[k] };
+    }
+    renderContentSidebar();
+  } catch (err) {
+    toast('Failed to load content types: ' + err.message, 'error');
+  }
+}
+
+function renderContentSidebar() {
+  const sb = $('content-sidebar');
+  sb.innerHTML = '<div style="padding:12px 16px;font-size:12px;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.5px;border-bottom:1px solid var(--border)">Content Types</div>';
+  for (const [key, val] of Object.entries(contentTypes)) {
+    const meta = CONTENT_TYPE_META[key] || { icon: 'file', label: key };
+    const active = activeContentType === key ? ' active' : '';
+    sb.innerHTML += `<div class="sidebar-item${active}" onclick="selectContentType('${key}')">
+      <span><i class="fas fa-${meta.icon}" style="margin-right:8px;color:var(--primary-light)"></i>${esc(meta.label)}</span>
+      <span class="count">${val.count ?? '?'}</span>
+    </div>`;
+  }
+}
+
+async function selectContentType(type) {
+  activeContentType = type;
+  renderContentSidebar();
+  const main = $('content-main');
+  main.innerHTML = '<div class="loading-center"><span class="spinner spinner-lg"></span> Loading...</div>';
+  try {
+    const res = await api('GET', `/api/admin/content/${type}`);
+    activeContentData = Array.isArray(res) ? res : res.items || res.data || [];
+    if (type === 'drugs') {
+      drugCategories = [...new Set(activeContentData.map(d => d.cat).filter(Boolean))];
+    }
+    renderContentTable(type);
+  } catch (err) {
+    main.innerHTML = `<div class="loading-center" style="color:var(--danger)">${esc(err.message)}</div>`;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CONTENT TABLE
+   ══════════════════════════════════════════════════════════════ */
+function renderContentTable(type) {
+  const meta = CONTENT_TYPE_META[type] || { label: type, icon: 'file' };
+  const isDrug = type === 'drugs';
+  const isDisease = type === 'diseases';
+
+  let cols, headHtml, addLabel;
+  if (isDrug) {
+    cols = ['name', 'brand', 'cat', 'use'];
+    headHtml = '<th></th><th>Name</th><th>Brand</th><th>Category</th><th>Use</th><th>Doses</th><th style="text-align:right">Actions</th>';
+    addLabel = 'Add Drug';
+  } else if (isDisease) {
+    cols = ['name', 'species', 'category', 'severity'];
+    headHtml = '<th></th><th>Name</th><th>Species</th><th>Category</th><th>Severity</th><th style="text-align:right">Actions</th>';
+    addLabel = 'Add Disease';
+  } else {
+    // Generic: show first 4 keys
+    const sample = activeContentData[0] || {};
+    cols = Object.keys(sample).filter(k => k !== '_id' && k !== '__v').slice(0, 4);
+    headHtml = '<th></th>' + cols.map(c => `<th>${esc(c)}</th>`).join('') + '<th style="text-align:right">Actions</th>';
+    addLabel = 'Add ' + meta.label.replace(/s$/, '');
+  }
+
+  const main = $('content-main');
+  main.innerHTML = `
+    <div class="table-toolbar">
+      <h2><i class="fas fa-${meta.icon}" style="color:var(--primary-light);margin-right:8px"></i>${esc(meta.label)}</h2>
+      <div style="display:flex;gap:10px;align-items:center">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input placeholder="Search..." id="content-search" oninput="filterContent()">
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="${isDrug ? 'openDrugModal()' : `openContentAddModal('${type}')`}">
+          <i class="fas fa-plus"></i> ${addLabel}
+        </button>
+      </div>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr>${headHtml}</tr></thead>
+        <tbody id="content-tbody"></tbody>
+      </table>
+    </div>`;
+  filterContent();
+}
+
+function filterContent() {
+  const q = ($('content-search')?.value || '').toLowerCase();
+  const type = activeContentType;
+  const isDrug = type === 'drugs';
+  const isDisease = type === 'diseases';
+  const tbody = $('content-tbody');
+  if (!tbody) return;
+
+  const filtered = activeContentData.filter((item, i) => {
+    if (!q) return true;
+    return JSON.stringify(item).toLowerCase().includes(q);
+  });
+
+  if (!filtered.length) {
+    tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;padding:40px;color:var(--text-muted)">No items found</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = filtered.map((item, fi) => {
+    const idx = activeContentData.indexOf(item);
+    let rowHtml;
+
+    if (isDrug) {
+      const doseCount = Array.isArray(item.doses) ? item.doses.length : 0;
+      rowHtml = `<tr>
+        <td><button class="btn btn-ghost btn-sm" onclick="toggleExpand(this, ${idx})" style="padding:3px 8px"><i class="fas fa-chevron-right"></i></button></td>
+        <td><strong>${esc(item.name)}</strong></td>
+        <td>${esc(item.brand)}</td>
+        <td>${esc(item.cat)}</td>
+        <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(item.use)}</td>
+        <td>${doseCount}</td>
+        <td style="text-align:right">
+          <button class="btn btn-ghost btn-sm" onclick="openDrugModal(${idx})" title="Edit"><i class="fas fa-edit"></i></button>
+          <button class="btn btn-danger btn-sm" onclick="deleteContentItem('${type}', ${idx})" title="Delete"><i class="fas fa-trash"></i></button>
+        </td>
+      </tr>
+      <tr class="expand-row" id="expand-${idx}">
+        <td colspan="7" class="expand-cell">${buildDrugDetails(item)}</td>
+      </tr>`;
+    } else if (isDisease) {
+      const sevColor = { high: 'var(--danger)', medium: 'var(--warning)', low: 'var(--success)' };
+      rowHtml = `<tr>
+        <td><button class="btn btn-ghost btn-sm" onclick="toggleExpand(this, ${idx})" style="padding:3px 8px"><i class="fas fa-chevron-right"></i></button></td>
+        <td><strong>${esc(item.name)}</strong></td>
+        <td>${esc(item.species)}</td>
+        <td>${esc(item.category)}</td>
+        <td><span style="color:${sevColor[item.severity] || 'inherit'}">${esc(item.severity)}</span></td>
+        <td style="text-align:right">
+          <button class="btn btn-ghost btn-sm" onclick="openContentEditModal('${type}', ${idx})" title="Edit"><i class="fas fa-edit"></i></button>
+          <button class="btn btn-danger btn-sm" onclick="deleteContentItem('${type}', ${idx})" title="Delete"><i class="fas fa-trash"></i></button>
+        </td>
+      </tr>
+      <tr class="expand-row" id="expand-${idx}">
+        <td colspan="6" class="expand-cell">${buildGenericDetails(item)}</td>
+      </tr>`;
+    } else {
+      const sample = activeContentData[0] || {};
+      const cols = Object.keys(sample).filter(k => k !== '_id' && k !== '__v').slice(0, 4);
+      rowHtml = `<tr>
+        <td><button class="btn btn-ghost btn-sm" onclick="toggleExpand(this, ${idx})" style="padding:3px 8px"><i class="fas fa-chevron-right"></i></button></td>
+        ${cols.map(c => `<td>${esc(item[c])}</td>`).join('')}
+        <td style="text-align:right">
+          <button class="btn btn-ghost btn-sm" onclick="openContentEditModal('${type}', ${idx})" title="Edit"><i class="fas fa-edit"></i></button>
+          <button class="btn btn-danger btn-sm" onclick="deleteContentItem('${type}', ${idx})" title="Delete"><i class="fas fa-trash"></i></button>
+        </td>
+      </tr>
+      <tr class="expand-row" id="expand-${idx}">
+        <td colspan="${cols.length + 2}" class="expand-cell">${buildGenericDetails(item)}</td>
+      </tr>`;
+    }
+    return rowHtml;
+  }).join('');
+}
+
+function toggleExpand(btn, idx) {
+  const row = $('expand-' + idx);
+  if (!row) return;
+  const open = row.classList.toggle('open');
+  btn.querySelector('i').className = open ? 'fas fa-chevron-down' : 'fas fa-chevron-right';
+}
+
+function buildDrugDetails(d) {
+  let html = '<div class="detail-grid">';
+  html += `<div class="detail-item"><label>Class</label><span>${esc(d.cls)}</span></div>`;
+  html += `<div class="detail-item"><label>Verified</label><span>${d.verified ? '<i class="fas fa-check-circle" style="color:var(--success)"></i> Yes' : '<i class="fas fa-times-circle" style="color:var(--danger)"></i> No'}</span></div>`;
+  if (d.warnings) html += `<div class="detail-item" style="grid-column:1/-1"><label>Warnings</label><span>${esc(d.warnings)}</span></div>`;
+  if (d.contraindications && d.contraindications.length) {
+    html += `<div class="detail-item" style="grid-column:1/-1"><label>Contraindications</label><span>${esc(Array.isArray(d.contraindications) ? d.contraindications.join(', ') : d.contraindications)}</span></div>`;
+  }
+  html += '</div>';
+  if (Array.isArray(d.doses) && d.doses.length) {
+    html += '<div style="margin-top:12px"><label style="font-size:11px;color:var(--text-muted);text-transform:uppercase">Doses</label>';
+    html += '<table style="margin-top:6px"><thead><tr><th>Species</th><th>Dose</th><th>Route</th><th>Frequency</th><th>Source</th></tr></thead><tbody>';
+    for (const dose of d.doses) {
+      html += `<tr>
+        <td>${esc(dose.species)}</td>
+        <td>${esc(dose.dose)}</td>
+        <td>${esc(dose.route)}</td>
+        <td>${esc(dose.frequency)}</td>
+        <td>${esc(dose.source)}</td>
+      </tr>`;
+    }
+    html += '</tbody></table></div>';
+  }
+  return html;
+}
+
+function buildGenericDetails(item) {
+  let html = '<div class="detail-grid">';
+  for (const [k, v] of Object.entries(item)) {
+    if (k === '_id' || k === '__v') continue;
+    const display = Array.isArray(v) ? v.join(', ') : (typeof v === 'object' && v !== null) ? JSON.stringify(v) : v;
+    html += `<div class="detail-item"><label>${esc(k)}</label><span>${esc(display)}</span></div>`;
+  }
+  html += '</div>';
+  return html;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DRUG MODAL
+   ══════════════════════════════════════════════════════════════ */
+function openDrugModal(idx) {
+  const isEdit = idx !== undefined;
+  $('drug-modal-title').textContent = isEdit ? 'Edit Drug' : 'Add Drug';
+  $('drug-edit-index').value = isEdit ? idx : '';
+
+  // Populate category dropdown
+  const catSel = $('drug-cat');
+  const cats = [...new Set([...drugCategories])];
+  catSel.innerHTML = '<option value="">-- Select --</option>' + cats.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
+  catSel.innerHTML += '<option value="__new">+ New category...</option>';
+
+  if (isEdit) {
+    const d = activeContentData[idx];
+    $('drug-name').value = d.name || '';
+    $('drug-brand').value = d.brand || '';
+    catSel.value = d.cat || '';
+    $('drug-cls').value = d.cls || '';
+    $('drug-use').value = d.use || '';
+    $('drug-verified').checked = !!d.verified;
+    $('drug-warnings').value = d.warnings || '';
+    $('drug-contra').value = Array.isArray(d.contraindications) ? d.contraindications.join(', ') : (d.contraindications || '');
+    // Doses
+    $('dose-rows').innerHTML = '';
+    if (Array.isArray(d.doses)) {
+      d.doses.forEach(dose => addDoseRow(dose));
+    }
+  } else {
+    $('drug-name').value = '';
+    $('drug-brand').value = '';
+    catSel.value = '';
+    $('drug-cls').value = '';
+    $('drug-use').value = '';
+    $('drug-verified').checked = false;
+    $('drug-warnings').value = '';
+    $('drug-contra').value = '';
+    $('dose-rows').innerHTML = '';
+  }
+  openModal('drug-modal');
+}
+
+function addDoseRow(dose) {
+  const row = document.createElement('div');
+  row.className = 'dose-row';
+  row.innerHTML = `
+    <input class="form-input dose-species" placeholder="Species" value="${esc(dose?.species || '')}">
+    <input class="form-input dose-dose" placeholder="Dose" value="${esc(dose?.dose || '')}">
+    <input class="form-input dose-route" placeholder="Route" value="${esc(dose?.route || '')}">
+    <input class="form-input dose-freq" placeholder="Frequency" value="${esc(dose?.frequency || '')}">
+    <input class="form-input dose-source" placeholder="Source" value="${esc(dose?.source || '')}">
+    <button class="dose-remove" onclick="this.parentElement.remove()" title="Remove"><i class="fas fa-times"></i></button>`;
+  $('dose-rows').appendChild(row);
+}
+
+async function saveDrug() {
+  const catSel = $('drug-cat');
+  let cat = catSel.value;
+  if (cat === '__new') {
+    cat = prompt('Enter new category name:');
+    if (!cat) return;
+  }
+
+  const drug = {
+    name: $('drug-name').value.trim(),
+    brand: $('drug-brand').value.trim(),
+    cat,
+    cls: $('drug-cls').value.trim(),
+    use: $('drug-use').value.trim(),
+    verified: $('drug-verified').checked,
+    warnings: $('drug-warnings').value.trim(),
+    contraindications: $('drug-contra').value.split(',').map(s => s.trim()).filter(Boolean),
+    doses: [],
+  };
+
+  if (!drug.name) { toast('Drug name is required', 'error'); return; }
+
+  // Collect doses
+  document.querySelectorAll('#dose-rows .dose-row').forEach(row => {
+    drug.doses.push({
+      species: row.querySelector('.dose-species').value.trim(),
+      dose: row.querySelector('.dose-dose').value.trim(),
+      route: row.querySelector('.dose-route').value.trim(),
+      frequency: row.querySelector('.dose-freq').value.trim(),
+      source: row.querySelector('.dose-source').value.trim(),
+    });
+  });
+
+  const editIdx = $('drug-edit-index').value;
+  try {
+    if (editIdx !== '') {
+      await api('PATCH', `/api/admin/content/drugs/${editIdx}`, drug);
+      toast('Drug updated', 'success');
+    } else {
+      await api('POST', '/api/admin/content/drugs', drug);
+      toast('Drug added', 'success');
+    }
+    closeModal('drug-modal');
+    selectContentType('drugs');
+  } catch (err) {
+    toast(err.message, 'error');
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   GENERIC CONTENT EDIT / ADD
+   ══════════════════════════════════════════════════════════════ */
+let contentEditState = { type: '', index: -1 };
+
+function openContentEditModal(type, idx) {
+  contentEditState = { type, index: idx };
+  const item = activeContentData[idx];
+  $('content-modal-title').textContent = 'Edit Item';
+  const body = $('content-modal-body');
+  body.innerHTML = '';
+  for (const [k, v] of Object.entries(item)) {
+    if (k === '_id' || k === '__v') continue;
+    const val = Array.isArray(v) ? v.join(', ') : (typeof v === 'object' && v !== null) ? JSON.stringify(v) : (v ?? '');
+    body.innerHTML += `<div class="form-group">
+      <label>${esc(k)}</label>
+      <input class="form-input content-field" data-key="${esc(k)}" value="${esc(val)}">
+    </div>`;
+  }
+  openModal('content-modal');
+}
+
+function openContentAddModal(type) {
+  contentEditState = { type, index: -1 };
+  $('content-modal-title').textContent = 'Add Item';
+  const body = $('content-modal-body');
+  // Use keys from first existing item or provide defaults
+  const sample = activeContentData[0] || {};
+  const keys = Object.keys(sample).filter(k => k !== '_id' && k !== '__v');
+  body.innerHTML = '';
+  for (const k of keys) {
+    body.innerHTML += `<div class="form-group">
+      <label>${esc(k)}</label>
+      <input class="form-input content-field" data-key="${esc(k)}">
+    </div>`;
+  }
+  if (!keys.length) {
+    body.innerHTML = '<div class="form-group"><label>Name</label><input class="form-input content-field" data-key="name"></div>';
+  }
+  openModal('content-modal');
+}
+
+async function saveContentItem() {
+  const { type, index } = contentEditState;
+  const fields = document.querySelectorAll('#content-modal-body .content-field');
+  const item = {};
+  fields.forEach(f => { item[f.dataset.key] = f.value; });
+  try {
+    if (index >= 0) {
+      await api('PATCH', `/api/admin/content/${type}/${index}`, item);
+      toast('Item updated', 'success');
+    } else {
+      await api('POST', `/api/admin/content/${type}`, item);
+      toast('Item added', 'success');
+    }
+    closeModal('content-modal');
+    selectContentType(type);
+  } catch (err) {
+    toast(err.message, 'error');
+  }
+}
+
+async function deleteContentItem(type, idx) {
+  if (!confirm('Delete this item? This cannot be undone.')) return;
+  try {
+    await api('DELETE', `/api/admin/content/${type}/${idx}`);
+    toast('Item deleted', 'success');
+    selectContentType(type);
+  } catch (err) {
+    toast(err.message, 'error');
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BOOT
+   ══════════════════════════════════════════════════════════════ */
+if (token) {
+  showApp();
+} else {
+  $('login-screen').style.display = 'flex';
+}
+
+// Close modals on overlay click
+document.querySelectorAll('.modal-overlay').forEach(ov => {
+  ov.addEventListener('click', e => {
+    if (e.target === ov) ov.classList.remove('open');
+  });
+});
+
+// Close modals on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+  }
+});
+</script>
+</body>
+</html>
