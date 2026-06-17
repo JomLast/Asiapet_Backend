@@ -9,7 +9,6 @@ service** (backend + frontend + provisioning), see **[DEPLOY.md](DEPLOY.md)**.
 ## Quick start
 
 ```bash
-cd backend
 cp .env.example .env          # edit JWT_SECRET before production
 npm install
 npm run seed                  # creates DB + demo data
@@ -44,7 +43,9 @@ npm run dev                   # tsx watch on http://localhost:4000
 | `PORT` | `4000` | HTTP port |
 | `JWT_SECRET` | `changeme_...` | **Change in production** |
 | `DEFAULT_CLINIC_ID` | `clinic-1` | Clinic for public booking `POST /api/bookings` |
-| `CORS_ORIGIN` | `http://localhost:5173` | Allowed frontend origin |
+
+> CORS currently reflects the request origin (`origin: true`) so the app works from
+> `localhost`, `file://`, and Electron. There is no `CORS_ORIGIN` variable to set.
 
 ---
 

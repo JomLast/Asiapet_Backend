@@ -4,7 +4,7 @@
     "module": "CommonJS",
     "lib": ["ES2022"],
     "outDir": "dist",
-    "rootDir": "..",
+    "rootDir": ".",
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -13,10 +13,10 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@shared/types": ["../shared/types/index.ts"],
-      "@shared/types/*": ["../shared/types/*"]
+      "@shared/types": ["./shared/types/index.ts"],
+      "@shared/types/*": ["./shared/types/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "shared/**/*"],
   "exclude": ["node_modules", "dist"]
 }
