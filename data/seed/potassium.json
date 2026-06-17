@@ -1,0 +1,128 @@
+[
+  {
+    "species": "Bearded Dragon",
+    "temp": "24–32 °C gradient",
+    "basking": "38–43 °C",
+    "night": "18–24 °C",
+    "humidity": "30–40 %",
+    "uvb": "10.0 UVB tube full length",
+    "note": "Strict basking spot for digestion. MBD common without UVB."
+  },
+  {
+    "species": "Leopard Gecko",
+    "temp": "24–30 °C gradient",
+    "basking": "30–35 °C (under-tank heat)",
+    "night": "18–22 °C",
+    "humidity": "40–60 % (humid hide for shed)",
+    "uvb": "Low UVB 5.0 optional",
+    "note": "Nocturnal — under-belly heat preferred over basking. Crepuscular UVB low."
+  },
+  {
+    "species": "Crested Gecko",
+    "temp": "22–26 °C",
+    "basking": "not required (avoid > 28)",
+    "night": "18–22 °C",
+    "humidity": "60–80 %",
+    "uvb": "Low 2.0–5.0 optional",
+    "note": "Cool, humid forest setup. Overheating kills crested geckos."
+  },
+  {
+    "species": "Green Iguana",
+    "temp": "27–32 °C gradient",
+    "basking": "35–38 °C",
+    "night": "22–27 °C",
+    "humidity": "60–80 %",
+    "uvb": "10.0–12.0 UVB strong",
+    "note": "STRICT herbivore. UVB + temp + diet failure = MBD epidemic."
+  },
+  {
+    "species": "Veiled Chameleon",
+    "temp": "24–32 °C gradient",
+    "basking": "30–35 °C",
+    "night": "18–22 °C",
+    "humidity": "50–70 % + frequent mist",
+    "uvb": "5.0–10.0 UVB linear",
+    "note": "NEVER use water bowl — drinks droplets from misting. Extremely stress-sensitive."
+  },
+  {
+    "species": "Ball Python",
+    "temp": "27–30 °C gradient",
+    "basking": "30–32 °C",
+    "night": "24–26 °C",
+    "humidity": "50–60 % (70 % during shed)",
+    "uvb": "Not strictly required (low-dose 5.0 acceptable)",
+    "note": "Hide on both warm + cool side mandatory. Anorexia in winter normal (brumation)."
+  },
+  {
+    "species": "Corn Snake",
+    "temp": "24–29 °C gradient",
+    "basking": "29–32 °C",
+    "night": "18–24 °C",
+    "humidity": "40–50 %",
+    "uvb": "Not required",
+    "note": "Hardy beginner snake. Mites + RI most common issue."
+  },
+  {
+    "species": "Boa Constrictor",
+    "temp": "27–32 °C gradient",
+    "basking": "30–34 °C",
+    "night": "24–27 °C",
+    "humidity": "50–60 %",
+    "uvb": "Not required",
+    "note": "Adult Boa requires large enclosure. RI common in cold + damp."
+  },
+  {
+    "species": "Burmese Python",
+    "temp": "27–32 °C",
+    "basking": "30–35 °C",
+    "night": "24–26 °C",
+    "humidity": "50–60 %",
+    "uvb": "Not required",
+    "note": "Very large adult — verify owner can house safely."
+  },
+  {
+    "species": "Russian Tortoise",
+    "temp": "21–32 °C gradient",
+    "basking": "32–35 °C",
+    "night": "15–22 °C",
+    "humidity": "40–60 %",
+    "uvb": "10.0 UVB strong",
+    "note": "Brumates Nov–Mar (3–4 °C). Strict herbivore — leafy greens, NO fruit."
+  },
+  {
+    "species": "Sulcata Tortoise (African Spurred)",
+    "temp": "24–32 °C",
+    "basking": "35–40 °C",
+    "night": "18–24 °C",
+    "humidity": "40–60 %",
+    "uvb": "10.0–12.0 UVB strong",
+    "note": "Massive adult (40–70 kg) — verify housing. Grass / hay only diet."
+  },
+  {
+    "species": "Hermann's / Greek Tortoise",
+    "temp": "21–32 °C",
+    "basking": "32–35 °C",
+    "night": "15–22 °C",
+    "humidity": "40–60 %",
+    "uvb": "10.0 UVB",
+    "note": "Brumates. Mediterranean herbivore — high-fiber leafy greens."
+  },
+  {
+    "species": "Red-Eared Slider",
+    "temp": "water 24–27 °C",
+    "basking": "31–35 °C (dry)",
+    "night": "water 22–25 °C",
+    "humidity": "aquatic",
+    "uvb": "10.0 UVB basking lamp",
+    "note": "Water quality is primary medicine. Filtration + UVB + dry basking spot mandatory."
+  },
+  {
+    "species": "Box Turtle",
+    "temp": "21–29 °C gradient",
+    "basking": "29–32 °C",
+    "night": "18–22 °C",
+    "humidity": "60–80 %",
+    "uvb": "5.0–10.0 UVB",
+    "note": "Outdoor enclosure ideal in warm seasons. Aural abscess common with hypovit A."
+  }
+]

@@ -1,0 +1,490 @@
+[
+  {
+    "sp": "Rabbit",
+    "icon": "🐰",
+    "items": [
+      {
+        "food": "Grass hay (Timothy/Orchard)",
+        "pct": 80,
+        "color": "#8FBC8F",
+        "note": "Unlimited — primary food for dental + GI health"
+      },
+      {
+        "food": "Fresh leafy greens",
+        "pct": 12,
+        "color": "#5DAB5D",
+        "note": "~1 cup/2 kg/day (kale, cilantro, romaine)"
+      },
+      {
+        "food": "Pellets",
+        "pct": 5,
+        "color": "#DEB887",
+        "note": "≈1 tbsp/kg/day · max ⅛ cup per 2 kg adult"
+      },
+      {
+        "food": "Treats / fruit",
+        "pct": 3,
+        "color": "#FFB6C1",
+        "note": "<1 tbsp/day — banana, apple, berry"
+      }
+    ],
+    "avoid": "❌ NO iceberg lettuce, seeds, nuts, grains, bread, dairy, chocolate. Limit cruciferous (cabbage, broccoli) → gas/bloat.",
+    "ref": "House Rabbit Society + BSAVA Rabbit Medicine 2e + Quesenberry 4e"
+  },
+  {
+    "sp": "Guinea Pig",
+    "icon": "🐹",
+    "items": [
+      {
+        "food": "Timothy hay",
+        "pct": 75,
+        "color": "#8FBC8F",
+        "note": "Unlimited — dental wear + GI"
+      },
+      {
+        "food": "Vit-C rich greens",
+        "pct": 15,
+        "color": "#FF6347",
+        "note": "Bell pepper, parsley, kale daily (vit C source)"
+      },
+      {
+        "food": "Vit-C fortified pellets",
+        "pct": 8,
+        "color": "#DEB887",
+        "note": "⅛ cup/day · keep airtight (vit C degrades)"
+      },
+      {
+        "food": "Treats / fruit",
+        "pct": 2,
+        "color": "#FFB6C1",
+        "note": "Carrot piece weekly · NO grapes/raisins"
+      }
+    ],
+    "avoid": "❌ Iceberg lettuce (causes diarrhea), dairy, nuts, seeds, alfalfa hay (adults — too much Ca). ⚠ DAILY VITAMIN C 10–30 mg/kg MANDATORY — cannot synthesize.",
+    "ref": "Quesenberry 4e Guinea Pig chapter"
+  },
+  {
+    "sp": "Chinchilla",
+    "icon": "🐭",
+    "items": [
+      {
+        "food": "Grass hay",
+        "pct": 80,
+        "color": "#8FBC8F",
+        "note": "Unlimited Timothy/Orchard — primary"
+      },
+      {
+        "food": "Chinchilla pellets",
+        "pct": 15,
+        "color": "#DEB887",
+        "note": "1–2 tbsp/day chinchilla-specific (not rabbit)"
+      },
+      {
+        "food": "Fresh greens (small)",
+        "pct": 3,
+        "color": "#5DAB5D",
+        "note": "Very small amount — gas-prone"
+      },
+      {
+        "food": "Treats (rose hips, raisin)",
+        "pct": 2,
+        "color": "#FFB6C1",
+        "note": "Max 1 raisin/week — sugar = diabetes"
+      }
+    ],
+    "avoid": "❌ Fruit (sugar), nuts/seeds (fat → liver), iceberg lettuce, fresh corn, cabbage. ⚠ Water bath = fungal — only DUST bath.",
+    "ref": "Quesenberry 4e Chinchilla chapter"
+  },
+  {
+    "sp": "Hamster (Syrian / Dwarf)",
+    "icon": "🐹",
+    "items": [
+      {
+        "food": "Commercial hamster mix / pellet",
+        "pct": 60,
+        "color": "#DEB887",
+        "note": "10–15 g/day Syrian · 5–7 g/day dwarf"
+      },
+      {
+        "food": "Fresh vegetables",
+        "pct": 20,
+        "color": "#5DAB5D",
+        "note": "Carrot, broccoli, cucumber small pieces"
+      },
+      {
+        "food": "Protein (egg, mealworm, cooked meat)",
+        "pct": 10,
+        "color": "#8B4513",
+        "note": "2–3×/week — gut-loaded insect best"
+      },
+      {
+        "food": "Fruit (small amount)",
+        "pct": 5,
+        "color": "#FFB6C1",
+        "note": "Apple/pear sliver · NO citrus"
+      },
+      {
+        "food": "Seeds/nuts (treat)",
+        "pct": 5,
+        "color": "#D2B48C",
+        "note": "Sunflower seed = treat only (high fat)"
+      }
+    ],
+    "avoid": "❌ Citrus, onion/garlic, chocolate, raw beans, potato/tomato leaves, apple seeds (cyanide). Dwarf hamsters: NO sugary fruit (diabetes-prone).",
+    "ref": "Quesenberry 4e Rodent chapter"
+  },
+  {
+    "sp": "Ferret",
+    "icon": "🦦",
+    "items": [
+      {
+        "food": "High-quality ferret kibble",
+        "pct": 90,
+        "color": "#8B4513",
+        "note": "Min 32% protein, 18% fat, <3% carb · meat-based"
+      },
+      {
+        "food": "Raw/whole prey (alt complete)",
+        "pct": 10,
+        "color": "#A0522D",
+        "note": "Whole mouse/chick · or balanced raw"
+      }
+    ],
+    "avoid": "❌ Obligate carnivore — NO fruit, vegetables, grain, sugar, dairy, raisins (kidney failure), chocolate. ⚠ Sugar treats → insulinoma.",
+    "ref": "Carpenter 6e Ferret chapter + Quesenberry 4e"
+  },
+  {
+    "sp": "Sugar Glider",
+    "icon": "🦘",
+    "items": [
+      {
+        "food": "HPW (Wombaroo) / BML diet",
+        "pct": 50,
+        "color": "#DAA520",
+        "note": "High-protein, gum/nectar base · 15–20 g/day adult"
+      },
+      {
+        "food": "Gut-loaded insects",
+        "pct": 25,
+        "color": "#8B4513",
+        "note": "Cricket, mealworm, BSF larva — dust with Ca"
+      },
+      {
+        "food": "Fresh fruit/veg variety",
+        "pct": 20,
+        "color": "#FFB6C1",
+        "note": "Small pieces — apple, pear, sweet potato, leafy"
+      },
+      {
+        "food": "Treats (small)",
+        "pct": 5,
+        "color": "#D2B48C",
+        "note": "Small amount nectar or yogurt drop"
+      }
+    ],
+    "avoid": "❌ Leadbeater's mix (OUTDATED — high vit A). NO chocolate, onion/garlic, raw bean, citrus. ⚠ Low-Ca diet (apple/banana only) → HLP hind limb paralysis.",
+    "ref": "Carpenter 6e p.503 Sugar Glider + recent literature (Lennox, Booth/Pye)"
+  },
+  {
+    "sp": "Hedgehog (African Pygmy)",
+    "icon": "🦔",
+    "items": [
+      {
+        "food": "Quality dry cat/hedgehog kibble",
+        "pct": 70,
+        "color": "#8B4513",
+        "note": "30–35% protein, <15% fat (chicken/turkey based)"
+      },
+      {
+        "food": "Gut-loaded insects",
+        "pct": 20,
+        "color": "#A0522D",
+        "note": "Mealworm, cricket, dubia roach · primary protein"
+      },
+      {
+        "food": "Cooked egg / lean meat",
+        "pct": 5,
+        "color": "#DAA520",
+        "note": "1–2×/week · plain, unseasoned"
+      },
+      {
+        "food": "Fruit/vegetables (small)",
+        "pct": 5,
+        "color": "#FFB6C1",
+        "note": "Banana, apple, carrot · pieces only"
+      }
+    ],
+    "avoid": "❌ Milk/dairy (lactose intolerant), nuts, raw meat, raw egg, citrus, grapes, avocado, chocolate. ⚠ Obesity-prone — limit fat.",
+    "ref": "Carpenter 6e Hedgehog Table 8-12 + Hedgehog Welfare Society"
+  },
+  {
+    "sp": "Bearded Dragon — Juvenile (<12 mo)",
+    "icon": "🦎",
+    "items": [
+      {
+        "food": "Live insects (gut-loaded)",
+        "pct": 70,
+        "color": "#8B4513",
+        "note": "2–3 feedings/day · crickets/dubia/BSF · sized to head"
+      },
+      {
+        "food": "Fresh greens & veg",
+        "pct": 28,
+        "color": "#5DAB5D",
+        "note": "Collard, mustard, dandelion · daily · small pieces"
+      },
+      {
+        "food": "Fruit (rare)",
+        "pct": 2,
+        "color": "#FFB6C1",
+        "note": "Berry/papaya · max 1×/week"
+      }
+    ],
+    "avoid": "❌ Fireflies (LETHAL), avocado, rhubarb, spinach (binds Ca), wild-caught insects (parasites). ⚠ Dust insects with Ca daily, multivit 2×/wk.",
+    "ref": "Carpenter 6e Reptile chapter + Mader's 3e"
+  },
+  {
+    "sp": "Bearded Dragon — Adult (>12 mo)",
+    "icon": "🦎",
+    "items": [
+      {
+        "food": "Fresh greens & vegetables",
+        "pct": 80,
+        "color": "#5DAB5D",
+        "note": "Daily · large variety · primary diet"
+      },
+      {
+        "food": "Live insects (gut-loaded)",
+        "pct": 18,
+        "color": "#8B4513",
+        "note": "Every 2–3 days · sized to head · Ca-dusted"
+      },
+      {
+        "food": "Fruit (occasional)",
+        "pct": 2,
+        "color": "#FFB6C1",
+        "note": "Max 1–2×/week — small piece"
+      }
+    ],
+    "avoid": "❌ Same as juvenile + AVOID excess insects → obesity, gout, hepatic lipidosis. Reverse juvenile ratio.",
+    "ref": "Mader's Reptile Medicine 3e — adult feeding shift"
+  },
+  {
+    "sp": "Ball Python",
+    "icon": "🐍",
+    "items": [
+      {
+        "food": "Frozen-thawed rodent prey",
+        "pct": 100,
+        "color": "#8B4513",
+        "note": "Juvenile: 1 mouse q1–2 wk · Adult: 1 rat q2–4 wk · Prey ~10–15% of body weight"
+      }
+    ],
+    "avoid": "❌ NEVER live prey — rat can bite snake fatally. NO seasoning, no human food. Don't handle for 24–48h post-feed (regurgitation risk).",
+    "ref": "Carpenter 6e Reptile + Mader's 3e Snake nutrition"
+  },
+  {
+    "sp": "Tortoise (terrestrial — Sulcata, Russian, Hermann's)",
+    "icon": "🐢",
+    "items": [
+      {
+        "food": "Grasses + grass hay",
+        "pct": 70,
+        "color": "#8FBC8F",
+        "note": "Primary — Bermuda, Timothy, Orchard · graze outdoors when possible"
+      },
+      {
+        "food": "Leafy greens (weeds preferred)",
+        "pct": 25,
+        "color": "#5DAB5D",
+        "note": "Dandelion, mulberry, plantain, hibiscus leaf · daily variety"
+      },
+      {
+        "food": "Fruit (very limited)",
+        "pct": 3,
+        "color": "#FFB6C1",
+        "note": "<5% diet · max 1×/2 weeks small piece (strawberry, melon)"
+      },
+      {
+        "food": "Calcium supplement",
+        "pct": 2,
+        "color": "#FFFFFF",
+        "note": "Cuttlebone always available + Ca powder dust 2–3×/week"
+      }
+    ],
+    "avoid": "❌ Dog/cat food (causes pyramiding + kidney damage), iceberg lettuce (no nutrition), spinach/rhubarb (Ca-binding), high-protein commercial pellet, fruit-heavy diet.",
+    "ref": "Carpenter 6e + Mader's Reptile Medicine 3e Chelonian nutrition"
+  },
+  {
+    "sp": "Red-eared Slider / Aquatic Turtle",
+    "icon": "🐢",
+    "items": [
+      {
+        "food": "Commercial turtle pellet",
+        "pct": 35,
+        "color": "#DEB887",
+        "note": "Adult: 25% diet · Juvenile: 50% (more protein)"
+      },
+      {
+        "food": "Leafy greens (aquatic + terrestrial)",
+        "pct": 35,
+        "color": "#5DAB5D",
+        "note": "Romaine, water lettuce, water hyacinth, parsley"
+      },
+      {
+        "food": "Protein (insects, feeder fish, earthworm)",
+        "pct": 25,
+        "color": "#8B4513",
+        "note": "Juvenile higher, adult lower · feeder fish from clean source"
+      },
+      {
+        "food": "Calcium / cuttlebone",
+        "pct": 5,
+        "color": "#FFFFFF",
+        "note": "Floating cuttlebone in tank"
+      }
+    ],
+    "avoid": "❌ Raw meat (Salmonella), high-fat fish (steatitis), bread, cheese, processed human food. Juvenile is more carnivorous, adult becomes omnivore-leaning herbivore.",
+    "ref": "Mader's 3e Chelonian + Carpenter 6e"
+  },
+  {
+    "sp": "Parrot (Psittacine — Cockatiel, Conure, Amazon)",
+    "icon": "🦜",
+    "items": [
+      {
+        "food": "Formulated pellet (base diet)",
+        "pct": 70,
+        "color": "#DEB887",
+        "note": "Roudybush, Harrison's, Zupreem · primary"
+      },
+      {
+        "food": "Fresh vegetables",
+        "pct": 20,
+        "color": "#5DAB5D",
+        "note": "Broccoli, carrot, sweet potato, leafy greens DAILY"
+      },
+      {
+        "food": "Fresh fruit",
+        "pct": 5,
+        "color": "#FFB6C1",
+        "note": "Apple, berry, mango · small portion"
+      },
+      {
+        "food": "Seeds/nuts (enrichment only)",
+        "pct": 5,
+        "color": "#D2B48C",
+        "note": "Foraging toy only · NOT a main food (high fat → atherosclerosis)"
+      }
+    ],
+    "avoid": "❌❌ AVOCADO (FATAL), chocolate, caffeine, alcohol, onion/garlic, salt. ⚠ Seed-only diet = fatty liver + hypocalcemia. ⚠ Teflon fumes from kitchen LETHAL.",
+    "ref": "Carpenter 6e Bird chapter + AAV nutrition guide"
+  },
+  {
+    "sp": "Budgerigar (Budgie)",
+    "icon": "🦜",
+    "items": [
+      {
+        "food": "Pellet (preferred)",
+        "pct": 60,
+        "color": "#DEB887",
+        "note": "Convert from seed gradually · primary diet"
+      },
+      {
+        "food": "Fresh vegetables",
+        "pct": 20,
+        "color": "#5DAB5D",
+        "note": "Spinach, carrot, broccoli small pieces"
+      },
+      {
+        "food": "Seeds (transitional)",
+        "pct": 15,
+        "color": "#D2B48C",
+        "note": "Millet, canary grass · while transitioning to pellet"
+      },
+      {
+        "food": "Fruit + treats",
+        "pct": 5,
+        "color": "#FFB6C1",
+        "note": "Apple, melon, berry · sparingly · cuttlebone always"
+      }
+    ],
+    "avoid": "❌❌ Avocado (FATAL), chocolate, caffeine. ⚠ Seed-only diet = goiter (iodine deficiency) + fatty liver. ⚠ Teflon fumes LETHAL.",
+    "ref": "Carpenter 6e + AAV budgerigar nutrition"
+  },
+  {
+    "sp": "African Grey Parrot",
+    "icon": "🦜",
+    "items": [
+      {
+        "food": "Formulated pellet (calcium-fortified)",
+        "pct": 65,
+        "color": "#DEB887",
+        "note": "Primary · calcium-fortified critical for African Greys"
+      },
+      {
+        "food": "Fresh vegetables (Ca-rich)",
+        "pct": 22,
+        "color": "#5DAB5D",
+        "note": "Kale, broccoli, dandelion, sweet potato DAILY"
+      },
+      {
+        "food": "Fresh fruit",
+        "pct": 5,
+        "color": "#FFB6C1",
+        "note": "Apple, berry, papaya · small portion"
+      },
+      {
+        "food": "Whole nuts (foraging)",
+        "pct": 5,
+        "color": "#D2B48C",
+        "note": "1–2 almond/walnut in shell · foraging enrichment ONLY"
+      },
+      {
+        "food": "Cuttlebone / Ca block",
+        "pct": 3,
+        "color": "#FFFFFF",
+        "note": "Always available · prevents hypocalcemia seizures"
+      }
+    ],
+    "avoid": "❌❌ Avocado (FATAL), chocolate, caffeine. ⚠ Seed-only diet = hypocalcemia → seizures (Grey-specific risk). ⚠ Teflon fumes LETHAL.",
+    "ref": "Carpenter 6e — African Grey hypocalcemic syndrome documented"
+  },
+  {
+    "sp": "Chicken (Laying hen)",
+    "icon": "🐔",
+    "items": [
+      {
+        "food": "Layer pellet (16% protein)",
+        "pct": 75,
+        "color": "#DEB887",
+        "note": "120 g/hen/day · primary"
+      },
+      {
+        "food": "Free-range / pasture",
+        "pct": 15,
+        "color": "#5DAB5D",
+        "note": "Bugs, grass, weeds · varies by season"
+      },
+      {
+        "food": "Scratch grain (treat)",
+        "pct": 5,
+        "color": "#D2B48C",
+        "note": "Corn, oat mix · sparingly · evening"
+      },
+      {
+        "food": "Oyster shell (calcium)",
+        "pct": 3,
+        "color": "#FFFFFF",
+        "note": "Free-choice separate dish · shell quality"
+      },
+      {
+        "food": "Kitchen scraps (limited)",
+        "pct": 2,
+        "color": "#FFB6C1",
+        "note": "Greens, fruit · NO avocado, raw potato"
+      }
+    ],
+    "avoid": "❌ Avocado, raw/green potato, chocolate, dry beans, salty/sugary food, moldy feed. ⚠ Mostly scratch grain = calcium deficiency → thin shells.",
+    "ref": "Carpenter 6e Backyard Poultry + AAV/AAAP"
+  }
+]

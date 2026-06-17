@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "🐶",
+    "label": "Adult Mammal",
+    "temp": "25–28 °C"
+  },
+  {
+    "icon": "🦎",
+    "label": "Reptile / Amphibian",
+    "temp": "30–32 °C"
+  },
+  {
+    "icon": "🦜",
+    "label": "Adult Avian",
+    "temp": "30–32 °C"
+  },
+  {
+    "icon": "🐣",
+    "label": "Baby — no fur",
+    "temp": "32–34 °C"
+  },
+  {
+    "icon": "🐰",
+    "label": "Baby — with fur",
+    "temp": "30–32 °C"
+  },
+  {
+    "icon": "🐤",
+    "label": "Baby chick (psittacine)",
+    "temp": "32–34 °C"
+  }
+]

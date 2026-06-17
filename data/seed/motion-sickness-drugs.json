@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Maropitant (Cerenia)",
+    "cls": "NK1 antagonist — FIRST LINE",
+    "use": "Most effective antiemetic + motion sickness in dog/cat",
+    "doses": [
+      {
+        "sp": "Dog (motion sickness, 8h before travel)",
+        "d": "8 mg/kg",
+        "r": "PO",
+        "f": "q24h × max 2 days"
+      },
+      {
+        "sp": "Dog (acute vomiting)",
+        "d": "1 mg/kg",
+        "r": "SC",
+        "f": "q24h × max 5 days"
+      },
+      {
+        "sp": "Cat (motion sickness)",
+        "d": "1 mg/kg",
+        "r": "PO / SC",
+        "f": "q24h × max 5 days"
+      },
+      {
+        "sp": "Rabbit",
+        "d": "1–2 mg/kg",
+        "r": "SC",
+        "f": "q24h (visceral pain + antiemetic)"
+      },
+      {
+        "sp": "Ferret",
+        "d": "1 mg/kg",
+        "r": "PO",
+        "f": "q24h"
+      }
+    ],
+    "notes": "⚠ SC injection painful — cool refrigerated before use. ⚠ Reduces NK1 receptor activity in vomiting centre. ⚠ Motion sickness dose (8 mg/kg) much higher than antiemetic dose (1 mg/kg)."
+  },
+  {
+    "name": "Diphenhydramine (Benadryl)",
+    "cls": "H1 antihistamine",
+    "use": "Mild motion sickness + allergy",
+    "doses": [
+      {
+        "sp": "Dog",
+        "d": "2–4 mg/kg",
+        "r": "PO",
+        "f": "q8h (give 30–60 min before travel)"
+      },
+      {
+        "sp": "Cat",
+        "d": "2–4 mg/kg",
+        "r": "PO",
+        "f": "q8–12h"
+      },
+      {
+        "sp": "Rabbit",
+        "d": "1–2 mg/kg",
+        "r": "PO / SC",
+        "f": "q12h"
+      },
+      {
+        "sp": "Ferret",
+        "d": "0.5–2 mg/kg",
+        "r": "PO",
+        "f": "q8–12h"
+      }
+    ],
+    "notes": "Sedating effect helpful for stressed travellers. Tablets 25 mg or syrup 12.5 mg/5 mL."
+  },
+  {
+    "name": "Meclizine (Antivert/Bonine)",
+    "cls": "H1 antihistamine — long-acting",
+    "use": "Motion sickness + vestibular",
+    "doses": [
+      {
+        "sp": "Dog",
+        "d": "4–8 mg/kg",
+        "r": "PO",
+        "f": "q24h (1 hr before travel)"
+      },
+      {
+        "sp": "Cat",
+        "d": "2–4 mg/kg",
+        "r": "PO",
+        "f": "q24h"
+      },
+      {
+        "sp": "Rabbit (vestibular/torticollis)",
+        "d": "2–12 mg/kg",
+        "r": "PO",
+        "f": "q24h (Carpenter)"
+      },
+      {
+        "sp": "Rabbit (alt)",
+        "d": "12.5–25 mg/kg",
+        "r": "PO",
+        "f": "q8–12h reduces disorientation/rolling with head tilt"
+      }
+    ],
+    "notes": "Less sedating than diphenhydramine. Lasts 12–24 h. Good for long road trips and E. cuniculi vestibular."
+  },
+  {
+    "name": "Chlorpheniramine",
+    "cls": "H1 antihistamine",
+    "use": "Allergy + mild motion sickness",
+    "doses": [
+      {
+        "sp": "Dog",
+        "d": "2–8 mg/dog (or 0.2–0.8 mg/kg)",
+        "r": "PO",
+        "f": "q8–12h"
+      },
+      {
+        "sp": "Cat",
+        "d": "1–2 mg/cat",
+        "r": "PO",
+        "f": "q8–12h"
+      }
+    ],
+    "notes": "Less sedating than diphenhydramine. Useful for cats that need anti-pruritic + motion combined."
+  },
+  {
+    "name": "Ondansetron (Zofran)",
+    "cls": "5-HT3 antagonist",
+    "use": "Refractory nausea — chemo, pancreatitis",
+    "doses": [
+      {
+        "sp": "Dog",
+        "d": "0.1–0.5 mg/kg",
+        "r": "PO / IV / SC",
+        "f": "q8–12h"
+      },
+      {
+        "sp": "Cat",
+        "d": "0.1–0.5 mg/kg",
+        "r": "PO / IV / SC",
+        "f": "q8–12h"
+      },
+      {
+        "sp": "Ferret",
+        "d": "1 mg/kg",
+        "r": "PO",
+        "f": "q12–24h (Carpenter)"
+      },
+      {
+        "sp": "Rabbit",
+        "d": "0.1–1 mg/kg",
+        "r": "SC / PO",
+        "f": "q8–12h"
+      }
+    ],
+    "notes": "Reserve for refractory cases or chemo-induced. Expensive. Generic available."
+  },
+  {
+    "name": "Metoclopramide (Reglan)",
+    "cls": "D2 antagonist + prokinetic",
+    "use": "Vomiting + GI ileus",
+    "doses": [
+      {
+        "sp": "Dog",
+        "d": "0.2–0.5 mg/kg",
+        "r": "PO / SC / IV / IM",
+        "f": "q6–8h"
+      },
+      {
+        "sp": "Cat",
+        "d": "0.2–0.5 mg/kg",
+        "r": "PO / SC",
+        "f": "q8h"
+      },
+      {
+        "sp": "Rabbit",
+        "d": "0.2–1 mg/kg",
+        "r": "PO / SC / IM",
+        "f": "q6–24h"
+      }
+    ],
+    "notes": "Less effective than maropitant for pure motion sickness — useful when prokinesis also desired. Extrapyramidal at high dose."
+  }
+]

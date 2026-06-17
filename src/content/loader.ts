@@ -2,16 +2,20 @@ import fs from 'fs';
 import path from 'path';
 
 /**
- * Seed data lives at  ../data/seed  relative to the backend project root.
- * process.cwd() = D:\VetAsiaPet\backend  when started with `npm run dev`
- * or `npm run seed`.
- *
- * Every *.json file in that directory is served read-only via
- * GET /api/content/:type, keyed by its basename (e.g. "drugs", "lab-refs",
- * "fluid-maint", "bsa-k"). This means newly-extracted seed datasets become
- * available automatically — no whitelist to maintain.
+ * Seed data location — resolved from the first existing candidate so the backend runs both:
+ *   • standalone (deployed Asiapet_Backend) — seed is BUNDLED at  ./data/seed  (committed to the repo)
+ *   • in the VetAsiaPet monorepo (backend is a subfolder) — canonical seed at  ../data/seed
+ * Every *.json in it is served read-only via GET /api/content/:type, keyed by basename — no whitelist.
  */
-const SEED_DIR = path.resolve(process.cwd(), '../data/seed');
+function resolveSeedDir(): string {
+  const candidates = [
+    path.resolve(process.cwd(), '../data/seed'),  // monorepo: canonical (fresh from extract-seed.mjs)
+    path.resolve(process.cwd(), 'data/seed'),     // standalone repo: bundled copy (npm run bundle-seed)
+    path.resolve(__dirname, '../../data/seed'),   // fallback relative to compiled dist
+  ];
+  return candidates.find((p) => fs.existsSync(p)) ?? candidates[1];
+}
+const SEED_DIR = resolveSeedDir();
 
 const _store: Record<string, unknown> = {};
 

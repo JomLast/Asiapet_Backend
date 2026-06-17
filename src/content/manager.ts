@@ -7,7 +7,16 @@ import crypto from 'crypto';
  * every JSON seed file, including MD5 hash, item count, and version number.
  */
 
-const SEED_DIR = path.resolve(process.cwd(), '../data/seed');
+// Seed dir resolver — keep in sync with content/loader.ts (standalone bundled vs monorepo parent).
+function resolveSeedDir(): string {
+  const candidates = [
+    path.resolve(process.cwd(), '../data/seed'),  // monorepo canonical
+    path.resolve(process.cwd(), 'data/seed'),     // standalone repo: bundled copy
+    path.resolve(__dirname, '../../data/seed'),   // compiled-dist fallback
+  ];
+  return candidates.find((p) => fs.existsSync(p)) ?? candidates[1];
+}
+const SEED_DIR = resolveSeedDir();
 const MANIFEST_PATH = path.join(SEED_DIR, 'manifest.json');
 
 // ── Types ────────────────────────────────────────────────────────────────────

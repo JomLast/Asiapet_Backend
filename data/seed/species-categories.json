@@ -1,0 +1,246 @@
+[
+  {
+    "label": "Companion Mammal",
+    "items": [
+      "Dog",
+      "Cat"
+    ]
+  },
+  {
+    "label": "Lagomorph",
+    "items": [
+      "Rabbit"
+    ]
+  },
+  {
+    "label": "Rodent (Small Mammal)",
+    "items": [
+      "Guinea Pig",
+      "Chinchilla",
+      "Hamster",
+      "Gerbil",
+      "Mouse",
+      "Rat",
+      "Degu",
+      "Prairie Dog",
+      "Squirrel",
+      "Capybara"
+    ]
+  },
+  {
+    "label": "Other Small Mammal",
+    "items": [
+      "Ferret",
+      "Hedgehog",
+      "Sugar Glider",
+      "Fennec Fox",
+      "Meerkat",
+      "Skunk",
+      "Opossum",
+      "Marmoset",
+      "Bushbaby",
+      "Miniature Pig",
+      "Raccoon",
+      "Goat (pygmy/dwarf)"
+    ]
+  },
+  {
+    "label": "Reptile — Lizard",
+    "items": [
+      "Bearded Dragon",
+      "Leopard Gecko",
+      "Crested Gecko",
+      "Tokay Gecko",
+      "Day Gecko",
+      "Green Iguana",
+      "Blue-tongue Skink",
+      "Monitor Lizard (Savannah)",
+      "Monitor Lizard (Asian Water)",
+      "Chameleon (Veiled)",
+      "Chameleon (Panther)",
+      "Chameleon (Jackson's)",
+      "Frilled Dragon",
+      "Uromastyx",
+      "Anole"
+    ]
+  },
+  {
+    "label": "Reptile — Snake",
+    "items": [
+      "Ball Python",
+      "Burmese Python",
+      "Reticulated Python",
+      "Boa Constrictor",
+      "Corn Snake",
+      "King Snake",
+      "Milk Snake",
+      "Hognose Snake",
+      "Garter Snake",
+      "Rat Snake"
+    ]
+  },
+  {
+    "label": "Reptile — Chelonian",
+    "items": [
+      "Tortoise — Sulcata",
+      "Tortoise — Russian",
+      "Tortoise — Hermann's",
+      "Tortoise — Red-foot",
+      "Tortoise — Indian Star",
+      "Turtle — Red-eared Slider",
+      "Turtle — Yellow-belly Slider",
+      "Turtle — Box",
+      "Turtle — Map",
+      "Turtle — Musk",
+      "Turtle — Painted",
+      "Sea Turtle"
+    ]
+  },
+  {
+    "label": "Reptile — Crocodilian",
+    "items": [
+      "Crocodile",
+      "Caiman",
+      "Alligator"
+    ]
+  },
+  {
+    "label": "Bird — Psittacine",
+    "items": [
+      "Budgerigar (Budgie)",
+      "Cockatiel",
+      "Lovebird",
+      "Conure (Sun)",
+      "Conure (Green-cheek)",
+      "Conure (other)",
+      "African Grey",
+      "Amazon Parrot",
+      "Macaw (Blue-gold)",
+      "Macaw (Scarlet)",
+      "Macaw (other)",
+      "Cockatoo (Sulphur-crested)",
+      "Cockatoo (Umbrella)",
+      "Cockatoo (Moluccan)",
+      "Eclectus",
+      "Lorikeet",
+      "Quaker (Monk) Parrot",
+      "Senegal Parrot",
+      "Pionus"
+    ]
+  },
+  {
+    "label": "Bird — Passerine",
+    "items": [
+      "Canary",
+      "Zebra Finch",
+      "Gouldian Finch",
+      "Society Finch",
+      "Java Sparrow",
+      "Mynah",
+      "Magpie"
+    ]
+  },
+  {
+    "label": "Bird — Columbiform",
+    "items": [
+      "Pigeon",
+      "Dove"
+    ]
+  },
+  {
+    "label": "Bird — Raptor",
+    "items": [
+      "Falcon",
+      "Hawk",
+      "Owl (Barn)",
+      "Owl (Eagle)",
+      "Eagle",
+      "Kestrel"
+    ]
+  },
+  {
+    "label": "Bird — Poultry / Waterfowl",
+    "items": [
+      "Chicken (Bantam)",
+      "Chicken (Layer)",
+      "Chicken (Broiler)",
+      "Duck (Mallard)",
+      "Duck (Muscovy)",
+      "Duck (Pekin)",
+      "Goose",
+      "Turkey",
+      "Quail",
+      "Guinea Fowl",
+      "Peafowl"
+    ]
+  },
+  {
+    "label": "Bird — Ratite / Other",
+    "items": [
+      "Ostrich",
+      "Emu",
+      "Rhea",
+      "Toucan",
+      "Hornbill",
+      "Hummingbird",
+      "Penguin",
+      "Flamingo"
+    ]
+  },
+  {
+    "label": "Amphibian",
+    "items": [
+      "Frog (Pacman)",
+      "Frog (Tree)",
+      "Frog (Bullfrog)",
+      "Toad",
+      "Salamander",
+      "Newt",
+      "Axolotl",
+      "Caecilian"
+    ]
+  },
+  {
+    "label": "Fish / Aquatic Invertebrate",
+    "items": [
+      "Fish — Koi",
+      "Fish — Goldfish",
+      "Fish — Cichlid",
+      "Fish — Betta",
+      "Fish — Arowana",
+      "Fish — Discus",
+      "Shrimp",
+      "Crab",
+      "Snail",
+      "Coral"
+    ]
+  },
+  {
+    "label": "Invertebrate — Terrestrial",
+    "items": [
+      "Tarantula",
+      "Scorpion",
+      "Stick Insect",
+      "Roach (Pet)",
+      "Hermit Crab",
+      "Snail (Land)",
+      "Centipede",
+      "Millipede",
+      "Honey Bee"
+    ]
+  },
+  {
+    "label": "Wildlife / Other",
+    "items": [
+      "Bat",
+      "Squirrel (Wild)",
+      "Otter",
+      "Civet",
+      "Loris (Slow)",
+      "Pangolin",
+      "Primate",
+      "Marine Mammal",
+      "Other"
+    ]
+  }
+]

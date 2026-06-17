@@ -1,0 +1,267 @@
+{
+  "Dog": [
+    "Beagle",
+    "Bichon Frise",
+    "Border Collie",
+    "Boxer",
+    "Bulldog",
+    "Cavalier King Charles",
+    "Chihuahua",
+    "Cocker Spaniel",
+    "Corgi",
+    "Dachshund",
+    "Dalmatian",
+    "Doberman",
+    "French Bulldog",
+    "German Shepherd",
+    "Golden Retriever",
+    "Husky",
+    "Jack Russell Terrier",
+    "Labrador Retriever",
+    "Maltese",
+    "Miniature Pinscher",
+    "Mixed Breed",
+    "Pomeranian",
+    "Poodle",
+    "Pug",
+    "Rottweiler",
+    "Schnauzer",
+    "Shiba Inu",
+    "Shih Tzu",
+    "Yorkshire Terrier"
+  ],
+  "Cat": [
+    "American Shorthair",
+    "Bengal",
+    "British Shorthair",
+    "Domestic Longhair",
+    "Domestic Shorthair",
+    "Maine Coon",
+    "Mixed Breed",
+    "Munchkin",
+    "Persian",
+    "Ragdoll",
+    "Russian Blue",
+    "Scottish Fold",
+    "Siamese",
+    "Sphynx"
+  ],
+  "Rabbit": [
+    "American",
+    "Angora",
+    "Dutch",
+    "Dwarf Hotot",
+    "English Lop",
+    "Flemish Giant",
+    "Holland Lop",
+    "Lionhead",
+    "Mini Lop",
+    "Mini Rex",
+    "Mixed",
+    "Netherland Dwarf",
+    "New Zealand White",
+    "Polish",
+    "Rex"
+  ],
+  "Hamster": [
+    "Chinese",
+    "Dwarf Campbell",
+    "Dwarf Winter White",
+    "Roborovski",
+    "Syrian (Golden Teddy Bear)"
+  ],
+  "Chinchilla": [
+    "Beige",
+    "Black Velvet",
+    "Mosaic",
+    "Pink White",
+    "Standard Grey",
+    "Violet",
+    "White"
+  ],
+  "Guinea Pig": [
+    "Abyssinian",
+    "American",
+    "Coronet",
+    "Peruvian",
+    "Silkie",
+    "Skinny Pig",
+    "Teddy",
+    "Texel"
+  ],
+  "Ferret": [
+    "Albino",
+    "Black Sable",
+    "Chocolate",
+    "Cinnamon",
+    "Dark-Eyed White",
+    "Sable",
+    "Silver"
+  ],
+  "Hedgehog": [
+    "African Pygmy",
+    "Algerian",
+    "Egyptian Long-eared",
+    "European"
+  ],
+  "Sugar Glider": [
+    "Albino",
+    "Classic Grey",
+    "Leucistic",
+    "Mosaic",
+    "Platinum",
+    "White Face"
+  ],
+  "Gerbil": [
+    "Argente",
+    "Black",
+    "Lilac",
+    "Mongolian",
+    "Nutmeg",
+    "White-Spotted"
+  ],
+  "Squirrel": [
+    "American Red",
+    "Eastern Grey",
+    "Flying Squirrel",
+    "Fox",
+    "Indian Palm",
+    "Japanese",
+    "Prevost's"
+  ],
+  "Gatsby": [],
+  "Bird": [
+    "African Grey Parrot",
+    "Budgerigar (Budgie)",
+    "Canary",
+    "Cockatiel",
+    "Cockatoo",
+    "Conure",
+    "Eclectus",
+    "Finch",
+    "Lovebird",
+    "Macaw",
+    "Parakeet",
+    "Quaker Parrot",
+    "Sun Conure"
+  ],
+  "Parrot": [
+    "African Grey",
+    "Amazon",
+    "Caique",
+    "Cockatoo",
+    "Conure",
+    "Eclectus",
+    "Lorikeet",
+    "Macaw",
+    "Pionus",
+    "Quaker",
+    "Sun Conure"
+  ],
+  "Chicken": [
+    "Ayam Cemani",
+    "Brahma",
+    "Leghorn",
+    "Orpington",
+    "Plymouth Rock",
+    "Rhode Island Red",
+    "Silkie",
+    "Sussex",
+    "Wyandotte"
+  ],
+  "Duck": [
+    "Call",
+    "Indian Runner",
+    "Khaki Campbell",
+    "Mallard",
+    "Muscovy",
+    "Pekin",
+    "Rouen"
+  ],
+  "Pigeon": [
+    "Carrier",
+    "Fantail",
+    "Homing",
+    "King",
+    "Roller",
+    "Tumbler"
+  ],
+  "Snake": [
+    "Ball Python",
+    "Boa Constrictor",
+    "Burmese Python",
+    "Corn Snake",
+    "Garter Snake",
+    "Hognose",
+    "King Snake",
+    "Milk Snake",
+    "Reticulated Python",
+    "Rosy Boa"
+  ],
+  "Tortoise": [
+    "African Spurred (Sulcata)",
+    "Greek",
+    "Hermann's",
+    "Indian Star",
+    "Leopard",
+    "Red-Footed",
+    "Russian",
+    "Yellow-Footed"
+  ],
+  "Turtle": [
+    "Box Turtle",
+    "Map Turtle",
+    "Mud Turtle",
+    "Musk Turtle",
+    "Painted Turtle",
+    "Red-Eared Slider",
+    "Yellow-Bellied Slider"
+  ],
+  "Gecko": [
+    "African Fat-Tailed",
+    "Crested",
+    "Day",
+    "Gargoyle",
+    "Leopard",
+    "Tokay"
+  ],
+  "Chameleon": [
+    "Jackson's",
+    "Panther",
+    "Pygmy",
+    "Veiled"
+  ],
+  "Iguana": [
+    "Cuban Rock",
+    "Desert",
+    "Green",
+    "Rhinoceros"
+  ],
+  "Bearded Dragon": [
+    "Central",
+    "Eastern",
+    "Inland"
+  ],
+  "Monitor Lizard": [
+    "Asian Water",
+    "Nile",
+    "Savannah"
+  ],
+  "Fish": [
+    "Betta",
+    "Goldfish",
+    "Guppy",
+    "Koi",
+    "Molly",
+    "Oscar",
+    "Tetra"
+  ],
+  "Amphibian": [
+    "African Bullfrog",
+    "African Clawed Frog",
+    "Axolotl",
+    "Fire-bellied Toad",
+    "Pacman Frog",
+    "Tiger Salamander"
+  ]
+}

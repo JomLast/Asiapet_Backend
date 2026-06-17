@@ -1,0 +1,70 @@
+[
+  {
+    "id": "red",
+    "label": "Red — Critical",
+    "cls": "triage-red",
+    "urgency": "Life-threatening, requires continuous monitoring",
+    "criteria": [
+      "Shock, hypotension, hypothermia",
+      "Respiratory distress, cyanosis",
+      "Arrhythmia, seizure, active bleeding",
+      "On ventilator or oxygen cage",
+      "Post-major surgery within 12 h"
+    ],
+    "staffing": "1 vet per 1-2 patients + assisting nurse standby",
+    "monitoring": "every 15-60 min"
+  },
+  {
+    "id": "orange",
+    "label": "Orange — High Risk / Unstable",
+    "cls": "triage-orange",
+    "urgency": "Unstable but not critical",
+    "criteria": [
+      "At risk of deterioration (moderate-severe dehydration, tachypnea, borderline BP)",
+      "On continuous IV fluids or infusion",
+      "Requires frequent reassessment for treatment response"
+    ],
+    "staffing": "1 vet per 3-4 patients + nurse monitoring support",
+    "monitoring": "every 2-4 h"
+  },
+  {
+    "id": "yellow",
+    "label": "Yellow — Moderate",
+    "cls": "triage-yellow",
+    "urgency": "Fairly stable but needs close care",
+    "criteria": [
+      "Stable vital signs",
+      "On IV fluids or scheduled meds",
+      "Needs feeding, medication, and output monitoring"
+    ],
+    "staffing": "1 vet per 5-6 patients",
+    "monitoring": "every 6 h"
+  },
+  {
+    "id": "green",
+    "label": "Green — Stable",
+    "cls": "triage-green",
+    "urgency": "Clinically stable, routine care",
+    "criteria": [
+      "Improving condition",
+      "Eating/drinking on own",
+      "No significant risk of deterioration",
+      "Likely discharge within 1-2 days"
+    ],
+    "staffing": "1 vet per 8-10 patients",
+    "monitoring": "every 8-12 h"
+  },
+  {
+    "id": "blue",
+    "label": "Blue — Observation / Boarding",
+    "cls": "triage-blue",
+    "urgency": "Observation or routine hospitalization",
+    "criteria": [
+      "No emergency condition",
+      "Routine treatment plan",
+      "Needs basic care, feeding, medication, or wound dressing"
+    ],
+    "staffing": "Primarily nurse care, vet check as scheduled",
+    "monitoring": "one or twice daily"
+  }
+]

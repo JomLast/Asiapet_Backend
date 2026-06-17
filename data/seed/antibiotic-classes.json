@@ -1,0 +1,537 @@
+[
+  {
+    "mech": "Cell Wall Synthesis (β-lactam)",
+    "mechTag": "inhibit cell wall synthesis",
+    "subs": [
+      {
+        "sub": "Natural Penicillins (narrow spectrum)",
+        "drugs": [
+          "Penicillin G (Na, K, Procaine, Benzathine — IV/IM)",
+          "Penicillin V (PO)"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 1,
+          "an": 2,
+          "tags": [
+            "Streptococcus",
+            "Spirochetes"
+          ],
+          "note": "Gram+ cocci (Streptococcus), oral/above-diaphragm anaerobes, spirochetes. β-lactamase labile; poor vs most Gram−."
+        }
+      },
+      {
+        "sub": "Aminopenicillins (broad spectrum)",
+        "drugs": [
+          "Ampicillin",
+          "Amoxicillin"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 2,
+          "an": 2,
+          "tags": [
+            "+Clavulanate → β-lactamase, Staph"
+          ],
+          "note": "Gram+ plus some Gram− (E. coli, Proteus). With clavulanate adds β-lactamase producers, Staph, more anaerobes."
+        }
+      },
+      {
+        "sub": "Penicillinase-resistant (narrow)",
+        "drugs": [
+          "Nafcillin",
+          "Oxacillin",
+          "Dicloxacillin"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 0,
+          "an": 1,
+          "tags": [
+            "Anti-Staph (MSSA)"
+          ],
+          "note": "Narrow anti-staphylococcal (β-lactamase-producing MSSA). No Gram−, no MRSA."
+        }
+      },
+      {
+        "sub": "Antipseudomonal — Carboxypenicillins",
+        "drugs": [
+          "Ticarcillin",
+          "Carbenicillin"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 3,
+          "an": 1,
+          "tags": [
+            "Pseudomonas"
+          ],
+          "note": "Extended Gram− incl Pseudomonas. β-lactamase labile alone."
+        }
+      },
+      {
+        "sub": "Antipseudomonal — Ureidopenicillins",
+        "drugs": [
+          "Piperacillin",
+          "Azlocillin",
+          "Mezlocillin"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 3,
+          "an": 2,
+          "tags": [
+            "Pseudomonas",
+            "+Tazobactam"
+          ],
+          "note": "Broad Gram− incl Pseudomonas; piperacillin/tazobactam adds anaerobes + Staph (broadest penicillin)."
+        }
+      },
+      {
+        "sub": "Cephalosporins 1st gen",
+        "drugs": [
+          "Cefazolin",
+          "Cephalexin",
+          "Cefadroxil",
+          "Cephradine",
+          "Cephapirin",
+          "Cephalotin"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 1,
+          "an": 0,
+          "tags": [
+            "Staph",
+            "Strep"
+          ],
+          "note": "Strong Gram+ (Staph, Strep) + limited Gram− (Proteus, E. coli, Klebsiella). No Pseudomonas/anaerobes/Enterococcus."
+        }
+      },
+      {
+        "sub": "Cephalosporins 2nd gen",
+        "drugs": [
+          "Cefuroxime",
+          "Cefamandole",
+          "Cefprozil",
+          "Cefoxitin",
+          "Cefonicid",
+          "Cefmetazole",
+          "Cefotetan",
+          "Cefaclor"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 2,
+          "an": 1,
+          "tags": [
+            "Cefoxitin/Cefotetan → anaerobes"
+          ],
+          "note": "More Gram− than 1st gen; cephamycins (cefoxitin, cefotetan) add anaerobes (Bacteroides)."
+        }
+      },
+      {
+        "sub": "Cephalosporins 3rd gen",
+        "drugs": [
+          "Cefoperazone",
+          "Ceftriaxone",
+          "Ceftazidime",
+          "Cefpodoxime",
+          "Ceftizoxime",
+          "Cefotaxime",
+          "Cefdinir",
+          "Ceftibuten",
+          "Cefixime",
+          "Cefditoren"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 3,
+          "an": 0,
+          "tags": [
+            "Ceftazidime → Pseudomonas"
+          ],
+          "note": "Broad Gram− (Enterobacterales); ceftriaxone strong vs Strep; ceftazidime covers Pseudomonas. Weaker Gram+, poor anaerobes."
+        }
+      },
+      {
+        "sub": "Cephalosporins 4th gen",
+        "drugs": [
+          "Cefepime",
+          "Cefpirome"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 3,
+          "an": 0,
+          "tags": [
+            "Pseudomonas"
+          ],
+          "note": "Broad Gram+ and Gram− incl Pseudomonas & many β-lactamase producers."
+        }
+      },
+      {
+        "sub": "Cephalosporins 5th gen",
+        "drugs": [
+          "Ceftaroline"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 2,
+          "an": 1,
+          "tags": [
+            "MRSA"
+          ],
+          "note": "Broad Gram+ incl MRSA + Gram−. No Pseudomonas."
+        }
+      },
+      {
+        "sub": "Carbapenems",
+        "drugs": [
+          "Meropenem",
+          "Ertapenem",
+          "Doripenem",
+          "Imipenem + Cilastatin"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 3,
+          "an": 3,
+          "tags": [
+            "ESBL",
+            "Pseudomonas (not ertapenem)"
+          ],
+          "note": "Very broad: Gram+, Gram− (incl ESBL), anaerobes. Meropenem/imipenem cover Pseudomonas; ertapenem does NOT. Reserve drug."
+        }
+      },
+      {
+        "sub": "Monobactams",
+        "drugs": [
+          "Aztreonam"
+        ],
+        "cov": {
+          "gp": 0,
+          "gn": 3,
+          "an": 0,
+          "tags": [
+            "Pseudomonas",
+            "Aerobic Gram− only"
+          ],
+          "note": "Aerobic Gram− only (incl Pseudomonas). No Gram+, no anaerobes. Safe in β-lactam allergy."
+        }
+      },
+      {
+        "sub": "β-lactamase inhibitors",
+        "drugs": [
+          "Sulbactam",
+          "Tazobactam",
+          "Clavulanic acid"
+        ],
+        "cov": {
+          "gp": 0,
+          "gn": 0,
+          "an": 0,
+          "tags": [
+            "Potentiator"
+          ],
+          "note": "No useful activity alone — protect the partner β-lactam from β-lactamase (amox-clav, pip-tazo, amp-sulbactam)."
+        }
+      }
+    ]
+  },
+  {
+    "mech": "Cell Wall (non-β-lactam)",
+    "mechTag": "glycopeptide / membrane",
+    "subs": [
+      {
+        "sub": "Glycopeptides & membrane agents",
+        "drugs": [
+          "Vancomycin",
+          "Teicoplanin",
+          "Bacitracin",
+          "Polymyxin B"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 0,
+          "an": 1,
+          "tags": [
+            "MRSA",
+            "C. diff (PO)",
+            "Polymyxin → Gram−"
+          ],
+          "note": "Glycopeptides (vancomycin, teicoplanin): Gram+ only incl MRSA & resistant Gram+; oral vancomycin for C. difficile. Polymyxin B = Gram− membrane agent (incl Pseudomonas); Bacitracin = topical Gram+."
+        }
+      }
+    ]
+  },
+  {
+    "mech": "Protein Synthesis (30S)",
+    "mechTag": "inhibit ribosomal 30S subunit",
+    "subs": [
+      {
+        "sub": "Aminoglycosides",
+        "drugs": [
+          "Gentamicin",
+          "Amikacin",
+          "Neomycin",
+          "Tobramycin",
+          "Streptomycin"
+        ],
+        "cov": {
+          "gp": 1,
+          "gn": 3,
+          "an": 0,
+          "tags": [
+            "Pseudomonas",
+            "Synergy w/ β-lactam"
+          ],
+          "note": "Aerobic Gram− (incl Pseudomonas). Gram+ only in synergy with a β-lactam. Inactive vs anaerobes (O₂-dependent uptake). Nephro/ototoxic."
+        }
+      },
+      {
+        "sub": "Tetracyclines",
+        "drugs": [
+          "Doxycycline",
+          "Demeclocycline",
+          "Minocycline",
+          "Tetracycline",
+          "Tigecycline"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 2,
+          "an": 1,
+          "tags": [
+            "Atypical / Intracellular"
+          ],
+          "note": "Broad + intracellular: Rickettsia, Anaplasma, Ehrlichia, Mycoplasma/Hemoplasma, Chlamydia. Doxycycline preferred (tick-borne, respiratory)."
+        }
+      }
+    ]
+  },
+  {
+    "mech": "Protein Synthesis (50S)",
+    "mechTag": "inhibit ribosomal 50S subunit",
+    "subs": [
+      {
+        "sub": "Oxazolidinones",
+        "drugs": [
+          "Linezolid"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 0,
+          "an": 1,
+          "tags": [
+            "MRSA",
+            "VRE"
+          ],
+          "note": "Resistant Gram+ only (MRSA, VRE). No Gram−. Reserve drug."
+        }
+      },
+      {
+        "sub": "Streptogramins",
+        "drugs": [
+          "Quinupristin/Dalfopristin"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 0,
+          "an": 0,
+          "tags": [
+            "MRSA",
+            "VRE (E. faecium)"
+          ],
+          "note": "Resistant Gram+ (MRSA, VRE E. faecium — not E. faecalis)."
+        }
+      },
+      {
+        "sub": "Phenicols",
+        "drugs": [
+          "Chloramphenicol"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 2,
+          "an": 2,
+          "tags": [
+            "Atypical",
+            "CNS/eye penetration"
+          ],
+          "note": "Very broad: Gram+, Gram−, anaerobes, Rickettsia. Penetrates CNS/eye. Risk: marrow suppression (handler aplastic anaemia caution)."
+        }
+      },
+      {
+        "sub": "Macrolides",
+        "drugs": [
+          "Erythromycin",
+          "Azithromycin",
+          "Clarithromycin",
+          "Tylosin"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 1,
+          "an": 1,
+          "tags": [
+            "Atypical",
+            "Campylobacter"
+          ],
+          "note": "Gram+ & atypicals (Mycoplasma, Chlamydia, Campylobacter); azithromycin some Gram−. Erythromycin also a GI prokinetic."
+        }
+      },
+      {
+        "sub": "Lincosamides",
+        "drugs": [
+          "Clindamycin",
+          "Lincomycin"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 0,
+          "an": 3,
+          "tags": [
+            "Anaerobes",
+            "Toxoplasma/Neospora"
+          ],
+          "note": "Gram+ & anaerobes (esp above diaphragm); Toxoplasma, Neospora. NO aerobic Gram−. ⚠ Fatal oral use in rabbits/rodents/horses."
+        }
+      }
+    ]
+  },
+  {
+    "mech": "DNA Topoisomerase",
+    "mechTag": "inhibit DNA gyrase / topoisomerase IV",
+    "subs": [
+      {
+        "sub": "Fluoroquinolones",
+        "drugs": [
+          "Enrofloxacin",
+          "Marbofloxacin",
+          "Ciprofloxacin",
+          "Norfloxacin",
+          "Sparfloxacin",
+          "Moxifloxacin",
+          "Levofloxacin",
+          "Ofloxacin",
+          "Gemifloxacin",
+          "Enofloxacin"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 3,
+          "an": 1,
+          "tags": [
+            "Pseudomonas",
+            "Atypical"
+          ],
+          "note": "Aerobic Gram− (incl Pseudomonas — cipro/enro/marbo); atypicals. Variable Gram+. Poor anaerobe (better: moxifloxacin/pradofloxacin). ⚠ Cartilage damage in young; retinal toxicity in cats (high-dose enro)."
+        }
+      },
+      {
+        "sub": "Quinolones (1st gen)",
+        "drugs": [
+          "Nalidixic Acid"
+        ],
+        "cov": {
+          "gp": 0,
+          "gn": 2,
+          "an": 0,
+          "tags": [
+            "Urinary Gram−"
+          ],
+          "note": "Old narrow Gram− (urinary tract only). Largely superseded by fluoroquinolones."
+        }
+      }
+    ]
+  },
+  {
+    "mech": "Folic Acid Synthesis",
+    "mechTag": "inhibit folate synthesis",
+    "subs": [
+      {
+        "sub": "Sulfonamides",
+        "drugs": [
+          "Sulfamethoxazole (SMX)",
+          "Sulfadiazine",
+          "Silver Sulfadiazine",
+          "Sulfasalazine",
+          "Sulfisoxazole",
+          "Sulfadimethoxine"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 2,
+          "an": 0,
+          "tags": [
+            "Coccidia",
+            "Toxoplasma"
+          ],
+          "note": "Used with trimethoprim (potentiated sulfa). Broad Gram+/Gram− + protozoa (Coccidia, Toxoplasma, Pneumocystis). No Pseudomonas/anaerobes. ⚠ KCS, hepatopathy, hypersensitivity (esp Dobermann)."
+        }
+      },
+      {
+        "sub": "DHFR inhibitors",
+        "drugs": [
+          "Trimethoprim (TMP)",
+          "Pyrimethamine"
+        ],
+        "cov": {
+          "gp": 2,
+          "gn": 2,
+          "an": 0,
+          "tags": [
+            "Synergy w/ sulfa"
+          ],
+          "note": "Trimethoprim + sulfonamide = sequential folate blockade → bactericidal (TMP-SMX / TMP-sulfa). Pyrimethamine for protozoa (Toxoplasma, Neospora)."
+        }
+      }
+    ]
+  },
+  {
+    "mech": "DNA Damage",
+    "mechTag": "cytotoxic radicals",
+    "subs": [
+      {
+        "sub": "Nitroimidazoles",
+        "drugs": [
+          "Metronidazole"
+        ],
+        "cov": {
+          "gp": 0,
+          "gn": 0,
+          "an": 3,
+          "tags": [
+            "Anaerobes",
+            "Protozoa (Giardia)"
+          ],
+          "note": "Obligate anaerobes only + protozoa (Giardia, Trichomonas, Entamoeba). No activity vs aerobes. ⚠ Neurotoxicity at high/cumulative dose."
+        }
+      }
+    ]
+  },
+  {
+    "mech": "mRNA Synthesis",
+    "mechTag": "inhibit RNA polymerase",
+    "subs": [
+      {
+        "sub": "Rifamycins",
+        "drugs": [
+          "Rifampin"
+        ],
+        "cov": {
+          "gp": 3,
+          "gn": 1,
+          "an": 1,
+          "tags": [
+            "Mycobacteria",
+            "Intracellular",
+            "Combo only"
+          ],
+          "note": "Gram+ (Staph — in combo to prevent rapid resistance), mycobacteria, intracellular organisms. Always combine. Orange secretions; potent hepatic enzyme inducer."
+        }
+      }
+    ]
+  }
+]

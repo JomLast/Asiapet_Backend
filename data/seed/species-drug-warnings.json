@@ -1,0 +1,65 @@
+{
+  "rabbit": {
+    "fatal": [
+      "penicillin family",
+      "lincosamide",
+      "macrolide",
+      "cephalosporin"
+    ]
+  },
+  "hamster": {
+    "fatal": [
+      "penicillin family",
+      "lincosamide",
+      "macrolide",
+      "aminoglycoside"
+    ]
+  },
+  "gerbil": {
+    "fatal": [
+      "penicillin family",
+      "lincosamide",
+      "aminoglycoside"
+    ]
+  },
+  "chinchilla": {
+    "fatal": [
+      "penicillin family",
+      "lincosamide",
+      "cephalosporin"
+    ]
+  },
+  "guineapig": {
+    "fatal": [
+      "penicillin family",
+      "lincosamide",
+      "macrolide"
+    ]
+  },
+  "chelonian": {
+    "fatal": [
+      "avermectin / ivermectin"
+    ]
+  },
+  "tortoise": {
+    "fatal": [
+      "avermectin / ivermectin"
+    ]
+  },
+  "turtle": {
+    "fatal": [
+      "avermectin / ivermectin"
+    ]
+  },
+  "cat": {
+    "caution": [
+      "NSAID",
+      "paracetamol"
+    ]
+  },
+  "dog": {
+    "caution": [
+      "paracetamol"
+    ]
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "rabbit_grimace": {
+    "name": "Rabbit Grimace Scale (Keating et al.)",
+    "intro": "Assess each feature 0 / 1 / 2. Total /10. Scoring threshold ≥ 5 suggests pain requiring intervention. Reassess q4–6h after analgesia.",
+    "type": "grimace",
+    "features": [
+      {
+        "id": "orbital",
+        "label": "Orbital Tightening",
+        "options": [
+          {
+            "s": 0,
+            "t": "Eyes open, round, relaxed"
+          },
+          {
+            "s": 1,
+            "t": "Eye partially closed, eyelid wrinkle"
+          },
+          {
+            "s": 2,
+            "t": "Eye narrowed / squeezed shut, tight wrinkle"
+          }
+        ]
+      },
+      {
+        "id": "cheek",
+        "label": "Cheek Flattening",
+        "options": [
+          {
+            "s": 0,
+            "t": "Cheeks round, full (normal)"
+          },
+          {
+            "s": 1,
+            "t": "Moderate flattening, slight bone definition"
+          },
+          {
+            "s": 2,
+            "t": "Severe flattening, skull bones visible / \"hollow\""
+          }
+        ]
+      },
+      {
+        "id": "nostril",
+        "label": "Nostril Shape",
+        "options": [
+          {
+            "s": 0,
+            "t": "U-shaped (relaxed)"
+          },
+          {
+            "s": 1,
+            "t": "Slightly V-shaped"
+          },
+          {
+            "s": 2,
+            "t": "Sharp V — pointed forward"
+          }
+        ]
+      },
+      {
+        "id": "whisker",
+        "label": "Whisker Position",
+        "options": [
+          {
+            "s": 0,
+            "t": "Drooping laterally, relaxed"
+          },
+          {
+            "s": 1,
+            "t": "Slightly raised / clumped"
+          },
+          {
+            "s": 2,
+            "t": "Tight clump, pointing forward, parallel"
+          }
+        ]
+      },
+      {
+        "id": "ear",
+        "label": "Ear Position",
+        "options": [
+          {
+            "s": 0,
+            "t": "Hanging loose, facing forward"
+          },
+          {
+            "s": 1,
+            "t": "Slightly rotated / partially folded"
+          },
+          {
+            "s": 2,
+            "t": "Tightly folded, rotated backward / outward"
+          }
+        ]
+      }
+    ]
+  },
+  "avian": {
+    "name": "Avian Pain Checklist",
+    "intro": "Birds mask pain extensively. Check each sign — score 1 per present. Score ≥ 3 = analgesia indicated.",
+    "type": "checklist",
+    "items": [
+      "Ruffled feathers",
+      "Reluctance to perch / weight shifting",
+      "Feather picking / biting at site",
+      "Open-beak / abdominal breathing",
+      "Wing droop or lameness",
+      "Reduced food/water intake",
+      "Decreased vocalization / unusual vocalization",
+      "Eyes closed / squinting",
+      "Withdrawal from cage mates",
+      "Aggression in normally docile bird",
+      "Decreased preening / over-grooming"
+    ]
+  },
+  "reptile": {
+    "name": "Reptile Pain Checklist",
+    "intro": "Reptiles often appear \"lazy\" when in pain. Verify POTZ first — cold reptile cannot show normal signs. Score 1 per present.",
+    "type": "checklist",
+    "items": [
+      "Anorexia / refusing food",
+      "Hunched posture / standing unusual position",
+      "Lameness or flinching on palpation",
+      "Aggression in normally docile animal",
+      "Closed / squinted eyes",
+      "Head elevation + extension (star-gazing)",
+      "Color change / pallor",
+      "Lethargy beyond POTZ-related",
+      "Scratching / flicking at affected area",
+      "Pulling head into shell (chelonians)",
+      "Absence of normal basking / hide behavior",
+      "Decreased shed quality / dysecdysis"
+    ]
+  },
+  "mouse_grimace": {
+    "name": "Mouse Grimace Scale (Langford et al., Nature Methods 2010)",
+    "intro": "Assess each feature 0 / 1 / 2. Total /10. Use awake animals only. Reassess q4-6h after analgesia.",
+    "type": "grimace",
+    "features": [
+      {
+        "id": "orbital",
+        "label": "Orbital Tightening",
+        "options": [
+          {
+            "s": 0,
+            "t": "Eye open, relaxed"
+          },
+          {
+            "s": 1,
+            "t": "Eyelid partially closed, wrinkle around eye"
+          },
+          {
+            "s": 2,
+            "t": "Eye squeezed shut tight"
+          }
+        ]
+      },
+      {
+        "id": "nose",
+        "label": "Nose Bulge",
+        "options": [
+          {
+            "s": 0,
+            "t": "Normal nose bridge, no bulging"
+          },
+          {
+            "s": 1,
+            "t": "Slight bulging on bridge of nose"
+          },
+          {
+            "s": 2,
+            "t": "Obvious bulge + vertical wrinkles on side of nose"
+          }
+        ]
+      },
+      {
+        "id": "cheek",
+        "label": "Cheek Bulge",
+        "options": [
+          {
+            "s": 0,
+            "t": "Normal cheeks"
+          },
+          {
+            "s": 1,
+            "t": "Slight cheek bulging"
+          },
+          {
+            "s": 2,
+            "t": "Obvious cheek bulging"
+          }
+        ]
+      },
+      {
+        "id": "ear",
+        "label": "Ear Position",
+        "options": [
+          {
+            "s": 0,
+            "t": "Ears facing forward, normal"
+          },
+          {
+            "s": 1,
+            "t": "Ears rotate outward/backward, away from face"
+          },
+          {
+            "s": 2,
+            "t": "Ears tightly folded, \"pointed\" shape, increased ear-to-ear space"
+          }
+        ]
+      },
+      {
+        "id": "whisker",
+        "label": "Whisker Change",
+        "options": [
+          {
+            "s": 0,
+            "t": "Whiskers droop, downward curve"
+          },
+          {
+            "s": 1,
+            "t": "Whiskers slightly raised/pulled back"
+          },
+          {
+            "s": 2,
+            "t": "Whiskers either pulled back against cheek OR pulled forward \"stand on end\", may clump"
+          }
+        ]
+      }
+    ]
+  },
+  "rat_grimace": {
+    "name": "Rat Grimace Scale (Sotocinal et al., Molecular Pain 2011)",
+    "intro": "Assess each feature 0 / 1 / 2. Total /8. Use awake animals only.",
+    "type": "grimace",
+    "features": [
+      {
+        "id": "orbital",
+        "label": "Orbital Tightening",
+        "options": [
+          {
+            "s": 0,
+            "t": "Eye open"
+          },
+          {
+            "s": 1,
+            "t": "Eyelid partially closed"
+          },
+          {
+            "s": 2,
+            "t": "Eye squeezed shut"
+          }
+        ]
+      },
+      {
+        "id": "nose",
+        "label": "Nose/Cheek Flattening",
+        "options": [
+          {
+            "s": 0,
+            "t": "Normal"
+          },
+          {
+            "s": 1,
+            "t": "Slight flattening/elongation of nose bridge"
+          },
+          {
+            "s": 2,
+            "t": "Obvious flattening, sunken cheeks"
+          }
+        ]
+      },
+      {
+        "id": "ear",
+        "label": "Ear Changes",
+        "options": [
+          {
+            "s": 0,
+            "t": "Ears in normal position"
+          },
+          {
+            "s": 1,
+            "t": "Ears slightly curled/angled forward"
+          },
+          {
+            "s": 2,
+            "t": "Ears tightly curled forward to \"point\", widened ear-to-ear space"
+          }
+        ]
+      },
+      {
+        "id": "whisker",
+        "label": "Whisker Change",
+        "options": [
+          {
+            "s": 0,
+            "t": "Whiskers droop, downward curve"
+          },
+          {
+            "s": 1,
+            "t": "Whiskers slightly stiffened, angled along face"
+          },
+          {
+            "s": 2,
+            "t": "Whiskers tightly stiffened, clumped, pointing same direction"
+          }
+        ]
+      }
+    ]
+  },
+  "whole_patient": {
+    "name": "Whole Patient Pain Assessment (Animal Space)",
+    "intro": "Comprehensive form. Use alongside species-specific grimace scale. Complete all fields → score with clinical judgement.",
+    "type": "form"
+  },
+  "small_mammal": {
+    "name": "Small Mammal Pain Checklist (GP, hamster, hedgehog, etc.)",
+    "intro": "Score 1 per present sign. Bruxism + anorexia + reduced fecal = red flag — emergency.",
+    "type": "checklist",
+    "items": [
+      "Immobility / lethargy / isolation",
+      "Half-closed dull eyes",
+      "Pushing abdomen on floor",
+      "Bruxism (teeth grinding) — SEVERE PAIN sign",
+      "Anorexia",
+      "Reduced or absent fecal output — RED FLAG",
+      "Chewing / over-grooming affected area",
+      "Aggression in normally docile animal",
+      "Hunched posture / piloerection",
+      "Weight loss",
+      "Reluctance to move"
+    ]
+  }
+}

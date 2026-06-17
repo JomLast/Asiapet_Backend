@@ -2,6 +2,10 @@
 
 Node.js + Express + TypeScript REST API for the AsiaPet veterinary EHR.
 
+This repo is **self-contained**: the clinical content seed (drugs/diseases/etc.) is bundled in
+`data/seed/`, so a fresh clone runs with no monorepo needed. To deploy as a **per-clinic subscription
+service** (backend + frontend + provisioning), see **[DEPLOY.md](DEPLOY.md)**.
+
 ## Quick start
 
 ```bash
