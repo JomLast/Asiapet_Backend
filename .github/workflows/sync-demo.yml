@@ -1,0 +1,34 @@
+name: Sync demo with main
+
+# Keeps the `demo` branch up to date with `main`: every push to main is merged
+# into demo automatically. Demo-only changes (rich sample seed) are preserved
+# by the merge. If a merge conflict occurs, this job fails so you can resolve
+# it manually.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-demo
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Merge main into demo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main demo
+          git checkout demo
+          git merge origin/main --no-edit -m "ci: sync demo with main"
+          git push origin demo
